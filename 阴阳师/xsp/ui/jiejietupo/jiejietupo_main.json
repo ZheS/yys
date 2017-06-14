@@ -1,0 +1,27 @@
+{
+   "style" : "custom",
+   "config" : "save_阴阳师.dat",
+   "width" : 800,
+   "height" : 800,
+   "bg" : "a.png",
+   "cancelname" : "取消",
+   "okname" : "确认",
+   "views" : [
+      {
+         "type" : "Page",
+         "style" : "custom",
+         "text" : "突破模式选择",
+         "views" : [
+						{
+	            "id" : "jiejietupoSelect",
+	            "list" : "个人突破（开发中，勿点）,阴阳寮突破",
+	            "select" : "0",
+	            "size" : "330",
+	            "type" : "RadioGroup",
+	            "orientation" : "vertical",
+							"rect" : "10,10,400,100"
+            }
+         ]
+      }
+   ]
+}

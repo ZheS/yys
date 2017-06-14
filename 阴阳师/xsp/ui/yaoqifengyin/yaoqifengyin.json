@@ -1,0 +1,101 @@
+{
+   "style" : "custom",
+   "config" : "save_阴阳师.dat",
+   "width" : 800,
+   "height" : 800,
+   "bg" : "a.png",
+   "cancelname" : "取消",
+   "okname" : "确认",
+   "views" : [
+      {
+         "type" : "Page",
+         "style" : "custom",
+         "text" : "妖气封印",
+         "views" : [
+            {
+               "id" : "guishihei",
+               "type" : "CheckBoxGroup",
+               "list" : "鬼使黑",
+               "select" : "0",
+               "rect" : "10,10,400,100"
+            },
+            {
+               "id" : "gunv",
+               "type" : "CheckBoxGroup",
+               "list" : "骨女",
+               "select" : "0",
+               "rect" : "270,10,400,100"
+            },
+            {
+               "id" : "tiaotiaogege",
+               "type" : "CheckBoxGroup",
+               "list" : "跳跳哥哥",
+               "select" : "0",
+               "rect" : "520,10,400,100"
+            },
+            {
+               "id" : "haifangzhu",
+               "type" : "CheckBoxGroup",
+               "list" : "海坊主",
+               "select" : "0",
+               "rect" : "10,70,400,100"
+            },
+            {
+               "id" : "erkounv",
+               "type" : "CheckBoxGroup",
+               "list" : "二口女",
+               "select" : "0",
+               "rect" : "270,70,400,100"
+            },
+						{
+               "id" : "egui",
+               "type" : "CheckBoxGroup",
+               "list" : "饿鬼",
+               "select" : "",
+               "rect" : "520,70,400,100"
+            },
+						{
+               "id" : "jiaotu",
+               "type" : "CheckBoxGroup",
+               "list" : "椒图",
+               "select" : "",
+               "rect" : "10,130,400,100"
+            },
+            {
+               "align" : "left",
+               "color" : "0,0,0",
+               "size" : "20",
+               "text" : "网络延迟",
+               "type" : "Label",
+               "rect" : "40,230,200,50"
+            },
+            {
+               "id" : "delayTime",
+               "align" : "left",
+               "color" : "0,0,0",
+               "kbtype" : "number",
+               "size" : "20",
+               "text" : "350",
+               "type" : "Edit",
+               "rect" : "270,230,120,50"
+            },
+            {
+               "align" : "left",
+               "color" : "0,0,0",
+               "size" : "20",
+               "text" : "毫秒",
+               "type" : "Label",
+               "rect" : "400,230,200,50"
+            },
+            {
+               "align" : "left",
+               "color" : "255,0,0",
+               "size" : "20",
+               "text" : "此处为点击“刷新”到刷新完成的网络延迟时间",
+               "type" : "Label",
+               "rect" : "40,280,900,50"
+            }
+         ]
+      }
+   ]
+}

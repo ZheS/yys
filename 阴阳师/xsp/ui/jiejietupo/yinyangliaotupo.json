@@ -1,0 +1,27 @@
+{
+   "style" : "custom",
+   "config" : "save_阴阳师.dat",
+   "width" : 800,
+   "height" : 800,
+   "bg" : "a.png",
+   "cancelname" : "取消",
+   "okname" : "确认",
+   "views" : [
+      {
+         "type" : "Page",
+         "style" : "custom",
+         "text" : "阴阳寮突破设置",
+         "views" : [
+						{
+	            "id" : "yinyangliaotupoSelect",
+	            "list" : "0勋章,1勋章及以下,2勋章及以下,3勋章及以下,4勋章及以下,5勋章及以下",
+	            "select" : "0",
+	            "size" : "330",
+	            "type" : "RadioGroup",
+	            "orientation" : "vertical",
+							"rect" : "10,10,400,400"
+            }
+         ]
+      }
+   ]
+}
