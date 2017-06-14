@@ -46,17 +46,27 @@ function yuhun()
     mSleep(200);
 		yuhun();
 	elseif fangzhuYesX ~= -1 and fangzhuYesY ~= -1 then
+		sysLog("playerAccountInput="..playerAccountInput);
 		sysLog("fangzhuYesX-old="..fangzhuYesX..", fangzhuYesY-old="..fangzhuYesY);
-		local inviteJoinTeamTab = {inviteJoinTeam_col, inviteJoinTeam_pos, 95, 1001, 410, 1173, 567};
-		inviteJoinTeamX, inviteJoinTeamY = myFindColor(inviteJoinTeamTab);
-		sysLog("inviteJoinTeamX="..inviteJoinTeamX..", inviteJoinTeamY="..inviteJoinTeamY);
-		if inviteJoinTeamX ~= -1 and inviteJoinTeamY ~= -1 then
-			yuhun();
-		else
-			inviteX = math.random(1005,1168);
-			inviteY = math.random(604,646);
+		if playerAccountInput == "0" then
+			fangzhuYesX = math.random(1005,1168);
+			fangzhuYesY = math.random(604,646);
 			tap(fangzhuYesX,fangzhuYesY);
+			sysLog("fangzhuYesX="..fangzhuYesX..", fangzhuYesY="..fangzhuYesY);
 			mSleep(200);
+		elseif playerAccountInput == "1" then
+			local inviteJoinTeamTab = {inviteJoinTeam_col, inviteJoinTeam_pos, 95, 1001, 410, 1173, 567};
+			inviteJoinTeamX, inviteJoinTeamY = myFindColor(inviteJoinTeamTab);
+			sysLog("inviteJoinTeamX="..inviteJoinTeamX..", inviteJoinTeamY="..inviteJoinTeamY);
+			if inviteJoinTeamX ~= -1 and inviteJoinTeamY ~= -1 then
+				yuhun();
+			else
+				fangzhuYesX = math.random(1005,1168);
+				fangzhuYesY = math.random(604,646);
+				tap(fangzhuYesX,fangzhuYesY);
+				sysLog("fangzhuYesX="..fangzhuYesX..", fangzhuYesY="..fangzhuYesY);
+				mSleep(200);
+			end
 		end
 		yuhun();
 	elseif battleWinX ~= -1 and battleWinY ~= -1 then
