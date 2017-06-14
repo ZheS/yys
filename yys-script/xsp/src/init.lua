@@ -88,6 +88,9 @@ invite_pos = ""			--战斗结束后的继续邀请按钮周边颜色
 inviteJoinTeam_col = ""  --组队界面中的邀请图标主颜色
 inviteJoinTeam_pos = ""  --组队界面中的邀请图标周边颜色
 
+challengeBotton_col = ""  --挑战按钮主颜色
+challengeBotton_pos = ""  --挑战按钮周边颜色
+
 
 if width==1334 and height==750 then
   zudui_col = "0xe3e0de"	
@@ -136,7 +139,7 @@ if width==1334 and height==750 then
   battleLose_pos = "1|-32|0x585062,-24|8|0x5c5266,36|8|0x5e5468,-25|32|0x250c09,17|73|0x58422f,4|102|0x211e23,-63|75|0x17161b,-84|55|0x3a383c,-3|-69|0x5d4834"				--战斗失败界面周边颜色
   battleWinDamo_col = "0xbe532c"				--战斗胜利达摩主颜色
   battleWinDamo_pos = "23|-53|0xe7e0cd,31|15|0x121110,-85|-19|0x9b1111,124|5|0xd59427"				--战斗胜利达摩主颜色
-  battleWinGift_col = "0x370204"				--战斗胜利奖励主颜色
+  battleWinGift_col = "0x330404"				--战斗胜利奖励主颜色
   battleWinGift_pos = "-152|-2|0x83abde,124|-15|0x68260c,-121|-28|0x3c83c3,146|-2|0x362b0d,-182|-10|0x2b2514,14|10|0x3b3012"				--战斗胜利奖励周边颜色
   acceptReward_col = "0x55b15f"				--接受悬赏封印主颜色
   acceptReward_pos = "-3|-24|0x3a2927,18|17|0x382826,76|-9|0xebebeb,118|-8|0xfdfdfd,87|3|0xf6f6f6,110|2|0xf9f9f9"				--接受悬赏封印周边颜色
@@ -172,5 +175,7 @@ if width==1334 and height==750 then
 	invite_pos = "-56|-8|0xf3b25e,-87|-23|0x973c2d,-125|-5|0xcbb59c,-204|-6|0xdf6851,-333|28|0x852749,-94|-212|0x513427,83|35|0x6d3228,105|68|0x664435"			--战斗结束后的继续邀请按钮周边颜色
 	inviteJoinTeam_col = "0x31261b"
 	inviteJoinTeam_pos = "7|-40|0xf3e7ab,42|-38|0xddc26d,60|-35|0xa19b93,-20|-33|0xeddfa1,43|15|0xd2b054,30|-24|0x3a291c"
+	challengeBotton_col = "0xf3b25e"  --挑战按钮主颜色
+	challengeBotton_pos = "-61|-20|0x963b2d,60|31|0x973c2e,15|7|0xf3b25e,-22|13|0xf3b25e,-12|6|0x443829,21|8|0x302a23,-26|-6|0x3d3327"  --挑战按钮周边颜色
 end
 

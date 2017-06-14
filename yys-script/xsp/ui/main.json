@@ -14,12 +14,12 @@
          "views" : [
 						{
 	            "id" : "mainSelect",
-	            "list" : "妖气封印,结界突破,御魂",
+	            "list" : "妖气封印,结界突破,御魂,御灵",
 	            "select" : "0",
 	            "size" : "330",
 	            "type" : "RadioGroup",
 	            "orientation" : "vertical",
-							"rect" : "10,10,400,200"
+							"rect" : "10,10,400,300"
             },
 						{
 	            "align" : "left",
@@ -27,7 +27,7 @@
 	            "size" : "20",
 	            "text" : "悬赏封印协作：",
 	            "type" : "Label",
-							"rect" : "10,200,400,100"
+							"rect" : "10,300,400,100"
             },
 						{
 	            "id" : "rewardSelect",
@@ -37,7 +37,7 @@
 	            "size" : "330",
 	            "type" : "RadioGroup",
 	            "orientation" : "horizontal",
-							"rect" : "220,200,400,100"
+							"rect" : "220,300,400,100"
             }
          ]
       }
