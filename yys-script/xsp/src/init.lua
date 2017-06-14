@@ -83,6 +83,11 @@ attackDisable_pos = ""				--攻击按钮不可用周边颜色
 tansuo_col = ""				--探索灯笼按钮主颜色
 tansuo_pos = ""				--探索灯笼按钮周边颜色
 
+invite_col = ""			--战斗结束后的继续邀请按钮主颜色
+invite_pos = ""			--战斗结束后的继续邀请按钮周边颜色
+inviteJoinTeam_col = ""  --组队界面中的邀请图标主颜色
+inviteJoinTeam_pos = ""  --组队界面中的邀请图标周边颜色
+
 
 if width==1334 and height==750 then
   zudui_col = "0xe3e0de"	
@@ -131,8 +136,8 @@ if width==1334 and height==750 then
   battleLose_pos = "1|-32|0x585062,-24|8|0x5c5266,36|8|0x5e5468,-25|32|0x250c09,17|73|0x58422f,4|102|0x211e23,-63|75|0x17161b,-84|55|0x3a383c,-3|-69|0x5d4834"				--战斗失败界面周边颜色
   battleWinDamo_col = "0xbe532c"				--战斗胜利达摩主颜色
   battleWinDamo_pos = "23|-53|0xe7e0cd,31|15|0x121110,-85|-19|0x9b1111,124|5|0xd59427"				--战斗胜利达摩主颜色
-  battleWinGift_col = "0x000000"				--战斗胜利奖励主颜色
-  battleWinGift_pos = "-64|-10|0x7c7a79,82|50|0x340204,-93|48|0x702a0c,-122|36|0x3d84ca"				--战斗胜利奖励周边颜色
+  battleWinGift_col = "0x370204"				--战斗胜利奖励主颜色
+  battleWinGift_pos = "-152|-2|0x83abde,124|-15|0x68260c,-121|-28|0x3c83c3,146|-2|0x362b0d,-182|-10|0x2b2514,14|10|0x3b3012"				--战斗胜利奖励周边颜色
   acceptReward_col = "0x55b15f"				--接受悬赏封印主颜色
   acceptReward_pos = "-3|-24|0x3a2927,18|17|0x382826,76|-9|0xebebeb,118|-8|0xfdfdfd,87|3|0xf6f6f6,110|2|0xf9f9f9"				--接受悬赏封印周边颜色
   rejectReward_col = "0xde7461"				--拒绝悬赏封印主颜色
@@ -163,49 +168,9 @@ if width==1334 and height==750 then
   attackDisable_pos = "-48|0|0xb0a9a1,46|-6|0xb0a9a1,-69|-10|0x353029,70|17|0x423c36,-61|-14|0x675e5c,63|38|0x675e5c,66|-16|0x8b827a,-64|42|0x8c837b,9|47|0x47413f"				--攻击按钮不可用周边颜色
   tansuo_col = "0x21170d"				--探索灯笼按钮主颜色
 	tansuo_pos = "-9|7|0x21170c,-7|9|0xffe890,6|5|0xfff8a0,4|11|0x271c0d,-7|18|0x22190d,7|18|0x241a0d,-1|20|0x251a0e,-1|19|0xfecb92"				--探索灯笼按钮周边颜色
-	
-end
-
-if width==1920 and height==1080 then
-  zudui_col = "0xe4e1e1"						--组队图标主颜色
-  zudui_pos = "-65|5|0x6a389b,2|-78|0xd66241,76|22|0x4e2d2d"						--组队图标周边颜色
-  yaoqifengyin_col = "0xe7d6be"			--妖气封印图标主颜色
-  yaoqifengyin_pos = "-1|21|0x272420,41|-17|0x35312b,89|6|0x272420"			--妖气封印图标周边颜色
-  shuaxin_col = "0xf4b25f"			--刷新图标主颜色
-  shuaxin_pos = "-36|-2|0x302b23,-7|14|0x2a2621,42|-8|0x292521"			--刷新图标周边颜色
-  tiaotiaogege_col = "0x744b2a"			--跳跳哥哥图标主颜色
-  tiaotiaogege_pos = "-646|-34|0x393631,-764|-8|0xf7f1de,-718|-4|0x2d2a25,-791|-32|0xf0e7d2"			--跳跳哥哥图标周边颜色
-  guishihei_col = "0x704726"			--鬼使黑图标主颜色
-  guishihei_pos = "-728|-15|0xf4eedb,-789|-18|0x322f2a,-684|-44|0x292622,-735|-43|0xf3eedc"			--鬼使黑图标周边颜色
-  gunv_col = "0x704726"			--骨女图标主颜色
-  gunv_pos = "-770|-14|0x282521,-725|-17|0x2c2925,-777|-47|0xf7f2df,-733|-14|0xdfcfb6"			--骨女图标周边颜色
-  erkounv_col = "0x704726"			--二口女图标主颜色
-  erkounv_pos = "-791|-17|0xefead7,-724|-35|0x272420,-693|-21|0x322f2a,-683|-12|0xf6f0dc"			--二口女图标周边颜色
-  haifangzhu_col = "0x704726"			--海坊主图标主颜色
-  haifangzhu_pos = "-767|-9|0xf7f1de,-726|-15|0x272420,-693|-44|0x37342f,-678|-14|0xf6f0dd"			--海坊主图标周边颜色
-  zuduijiemian_col = "0x8c7342"				--组队界面主颜色
-  zuduijiemian_pos = "-2|52|0xebdaa0,-1|-34|0xb23630,-4|-93|0x46212a"				--组队界面周边颜色
-  
-  tilibugou_col = "00000000"				--体力不够界面主颜色
-  tilibugou_pos = "-646|-34|0x393631,-764|-8|0xf7f1de,-718|-4|0x2d2a25,-791|-32|0xf0e7d2"				--体力不够界面周边颜色
-  fangzhuNo_col = "0xb1a9a1"				--作为房主，不可开始战斗界面主颜色
-  fangzhuNo_pos = "-68|-16|0x2c2924,-124|-37|0x675e5e,116|43|0x8c837b,57|48|0x4e4646"				--作为房主，不可开始战斗界面周边颜色
-  fangzhuYes_col = "0xf4b25f"				--作为房主，可开始战斗界面主颜色
-  fangzhuYes_pos = "-69|0|0x292521,74|6|0x332c24,-124|-34|0x993e2e,-221|28|0x181d14,152|22|0xc6bdb5"				--作为房主，可开始战斗界面周边颜色
-  ready_col = "0xcfac7a"				--待准备界面的鼓图标主颜色
-  ready_pos = "-24|-16|0xfff2cd,53|36|0xfffaeb,25|145|0x4d4a46,-95|136|0x620e06"				--待准备界面的鼓图标周边颜色
-  leaveTeam_col = "0xdd6951"				--队伍中界面的离开队伍按钮主颜色
-  leaveTeam_pos = "-56|16|0x272420,-122|-40|0x882744,117|40|0xbb422d,23|46|0x67253e"				--队伍中界面的离开队伍按钮周边颜色
-  trueButton_col = "0xf4b25f"				--离开队伍后的确定按钮主颜色
-  trueButton_pos = "35|14|0x272420,-123|-38|0x973c2b,126|42|0xca803b,-4|48|0x6a332a"				--离开队伍后的确定按钮周边颜色
-  battleWin_col = "0xcdbeaa"				--战斗胜利界面主颜色
-  battleWin_pos = "-29|13|0x931b11,-141|29|0x4a1212,-1|123|0x4d2d1c"				--战斗胜利界面周边颜色
-  
-  battleLose_col = "00000000"				--战斗失败界面主颜色
-  battleLose_pos = "-646|-34|0x393631,-764|-8|0xf7f1de,-718|-4|0x2d2a25,-791|-32|0xf0e7d2"				--战斗失败界面周边颜色
-  battleWinDamo_col = "0x9b2212"				--战斗胜利达摩主颜色
-  battleWinDamo_pos = "6|72|0x000000,41|-68|0x6c4a2e,0|-59|0xe8e1ce,118|39|0xcf8a1e"				--战斗胜利达摩主颜色
-  battleWinGift_col = "0x000000"				--战斗胜利奖励主颜色
-  battleWinGift_pos = "-79|-59|0x3687cd,-36|-123|0xdfad23,-3|-161|0xd83948,-40|107|0x370204"				--战斗胜利奖励周边颜色
+	invite_col = "0xf3b25e"			--战斗结束后的继续邀请按钮主颜色
+	invite_pos = "-56|-8|0xf3b25e,-87|-23|0x973c2d,-125|-5|0xcbb59c,-204|-6|0xdf6851,-333|28|0x852749,-94|-212|0x513427,83|35|0x6d3228,105|68|0x664435"			--战斗结束后的继续邀请按钮周边颜色
+	inviteJoinTeam_col = "0x31261b"
+	inviteJoinTeam_pos = "7|-40|0xf3e7ab,42|-38|0xddc26d,60|-35|0xa19b93,-20|-33|0xeddfa1,43|15|0xd2b054,30|-24|0x3a291c"
 end
 

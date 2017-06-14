@@ -14,12 +14,12 @@
          "views" : [
 						{
 	            "id" : "mainSelect",
-	            "list" : "妖气封印,结界突破",
+	            "list" : "妖气封印,结界突破,御魂",
 	            "select" : "0",
 	            "size" : "330",
 	            "type" : "RadioGroup",
 	            "orientation" : "vertical",
-							"rect" : "10,10,400,100"
+							"rect" : "10,10,400,200"
             },
 						{
 	            "align" : "left",
