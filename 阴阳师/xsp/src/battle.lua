@@ -1,3 +1,4 @@
+require "util"
 require "init"
 
 function battle()
@@ -119,4 +120,36 @@ function battleFinish()
   else 
     battleFinish();
   end
+end
+
+function battleWin()
+	sysLog("battleWinX-old="..battleWinX..", battleWinY-old="..battleWinY);
+	battleWinX = math.random(1123,1321);
+	battleWinY = math.random(454,737);
+	tap(battleWinX,battleWinY);
+	sysLog("battleWinX="..battleWinX..", battleWinY="..battleWinY);
+end
+
+function battleLose()
+	sysLog("battleLoseX-old="..battleLoseX..", battleLoseY-old="..battleLoseY);
+	battleLoseX = math.random(1123,1321);
+	battleLoseY = math.random(454,737);
+	tap(battleLoseX,battleLoseY);
+	sysLog("battleLoseX="..battleLoseX..", battleLoseY="..battleLoseY);
+end
+
+function battleWinDamo()
+	sysLog("battleWinDamoX-old="..battleWinDamoX..", battleWinDamoY-old="..battleWinDamoY);
+	battleWinDamoX = math.random(1123,1321);
+	battleWinDamoY = math.random(454,737);
+	tap(battleWinDamoX,battleWinDamoY);
+	sysLog("battleWinDamoX="..battleWinDamoX..", battleWinDamoY="..battleWinDamoY);
+end
+
+function battleWinGift()
+	sysLog("battleWinGiftX-old="..battleWinGiftX..", battleWinGiftY-old="..battleWinGiftY);
+	battleWinGiftX = math.random(1123,1321);
+	battleWinGiftY = math.random(454,737);
+	tap(battleWinGiftX,battleWinGiftY);
+	sysLog("battleWinGiftX="..battleWinGiftX..", battleWinGiftY="..battleWinGiftY);
 end

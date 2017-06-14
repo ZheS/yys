@@ -29,9 +29,6 @@ function yuhun()
   fangzhuYesX, fangzhuYesY = myFindColor(fangzhuYesTab);
   --组队界面
 	
-	sysLog("fangzhuYesX="..fangzhuYesX..", fangzhuYesY="..fangzhuYesY);
-	
-	
   if readyX ~= -1 and readyY ~= -1 then
 		sysLog("readyX-old="..readyX..", readyY-old="..readyY);
     readyX = math.random(1136,1291);
@@ -41,67 +38,38 @@ function yuhun()
     mSleep(200);
 		yuhun();
 	elseif inviteX ~= -1 and inviteY ~= -1 then
+		sysLog("inviteX-old="..inviteX..", inviteY-old="..inviteY);
+		inviteX = math.random(707,872);
+		inviteY = math.random(427,471);
     tap(inviteX,inviteY);
+		sysLog("inviteX="..inviteX..", inviteY="..inviteY);
     mSleep(200);
 		yuhun();
 	elseif fangzhuYesX ~= -1 and fangzhuYesY ~= -1 then
+		sysLog("fangzhuYesX-old="..fangzhuYesX..", fangzhuYesY-old="..fangzhuYesY);
 		local inviteJoinTeamTab = {inviteJoinTeam_col, inviteJoinTeam_pos, 95, 1001, 410, 1173, 567};
 		inviteJoinTeamX, inviteJoinTeamY = myFindColor(inviteJoinTeamTab);
 		sysLog("inviteJoinTeamX="..inviteJoinTeamX..", inviteJoinTeamY="..inviteJoinTeamY);
 		if inviteJoinTeamX ~= -1 and inviteJoinTeamY ~= -1 then
 			yuhun();
 		else
+			inviteX = math.random(1005,1168);
+			inviteY = math.random(604,646);
 			tap(fangzhuYesX,fangzhuYesY);
 			mSleep(200);
 		end
 		yuhun();
 	elseif battleWinX ~= -1 and battleWinY ~= -1 then
-    tap(battleWinX,battleWinY);
-    mSleep(200);
-    battleWinX, battleWinY = myFindColor(battleWinTab);
-    sysLog("battleWinX2="..battleWinX..", battleWinY2="..battleWinY);
-    while battleWinX ~= -1 and battleWinY ~= -1 do
-      tap(battleWinX,battleWinY);
-      mSleep(200);
-      battleWinX, battleWinY = myFindColor(battleWinTab);
-      sysLog("battleWinX3="..battleWinX..", battleWinY3="..battleWinY);
-    end
+    battleWin();
     yuhun();
   elseif battleLoseX ~= -1 and battleLoseY ~= -1 then
-    tap(battleLoseX,battleLoseY);
-    mSleep(200);
-    battleLoseX, battleLoseY = myFindColor(battleLoseTab);
-    sysLog("battleLoseX2="..battleLoseX..", battleLoseY2="..battleLoseY);
-    while battleLoseX ~= -1 and battleLoseY ~= -1 do
-      tap(battleLoseX,battleLoseY);
-      mSleep(200);
-      battleLoseX, battleLoseY = myFindColor(battleLoseTab);
-      sysLog("battleLoseX3="..battleLoseX..", battleLoseY3="..battleLoseY);
-    end
+    battleLose();
 		yuhun();
   elseif battleWinDamoX ~= -1 and battleWinDamoY ~= -1 then
-    tap(battleWinDamoX,	battleWinDamoY);
-    mSleep(200);
-    battleWinDamoX, battleWinDamoY = myFindColor(battleWinDamoTab);
-    sysLog("battleWinDamoX2="..battleWinDamoX..", battleWinDamoY2="..battleWinDamoY);
-    while battleWinDamoX ~= -1 and battleWinDamoY ~= -1 do
-      tap(battleWinDamoX,	battleWinDamoY);
-      mSleep(200);
-      battleWinDamoX, battleWinDamoY = myFindColor(battleWinDamoTab);
-      sysLog("battleWinDamoX3="..battleWinDamoX..", battleWinDamoY3="..battleWinDamoY);
-    end
+    battleWinDamo();
     yuhun();
   elseif battleWinGiftX ~= -1 and battleWinGiftY ~= -1 then
-    tap(battleWinGiftX,	battleWinGiftY);
-    mSleep(200);
-    battleWinGiftX, battleWinGiftY = myFindColor(battleWinGiftTab);
-    sysLog("battleWinGiftX2="..battleWinGiftX..", battleWinGiftY2="..battleWinGiftY);
-    while battleWinGiftX ~= -1 and battleWinGiftY ~= -1 do
-      tap(battleWinGiftX,	battleWinGiftY);
-      mSleep(200);
-      battleWinGiftX, battleWinGiftY = myFindColor(battleWinGiftTab);
-      sysLog("battleWinGiftX3="..battleWinGiftX..", battleWinGiftY3="..battleWinGiftY);
-    end
+    battleWinGift();
 		yuhun();
   else
     yuhun();
