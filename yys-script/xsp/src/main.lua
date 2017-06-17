@@ -3,6 +3,7 @@ init("0", 1); --以当前应用 Home 键在右边初始化
 require "yaoqifengyin.yaoqifengyin"
 require "jiejietupo.yinyangliaotupo"
 require "yuhun.yuhun"
+require "yuling.yuling"
 require "test"
 --
 start,setting = showUI("main.json")--显示UI并获取设置
@@ -55,6 +56,8 @@ elseif setting.mainSelect == "2" then
 	end
 	playerAccountInput = setting.playerAccountSelect;
 	yuhun();
+elseif setting.mainSelect == "3" then
+	yuling();
 end
 
 
