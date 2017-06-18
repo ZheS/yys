@@ -81,6 +81,30 @@ function yinyangliaotupoStart()
 	local yinyangliaotupoPageTab = {yinyangliaotupoPage_col, yinyangliaotupoPage_pos, 95, 0, 0, width, height};
   yinyangliaotupoPageX, yinyangliaotupoPageY = myFindColor(yinyangliaotupoPageTab);
   --阴阳寮突破界面
+	
+	local attackEnableTab = {attackEnable_col, attackEnable_pos, 95, 0, 0, width, height};
+  attackEnableX, attackEnableY = myFindColor(attackEnableTab);
+  --攻击按钮可用
+	
+	local attackDisableTab = {attackDisable_col, attackDisable_pos, 95, 0, 0, width, height};
+  attackDisableX, attackDisableY = myFindColor(attackDisableTab);
+  --攻击按钮不可用
+	
+	local readyTab = {ready_col, ready_pos, 95, 0, 0, width, height};
+  readyX, readyY = myFindColor(readyTab);
+  --待准备界面的鼓
+	local battleWinTab = {battleWin_col, battleWin_pos, 95, 0, 0, width, height};
+  battleWinX, battleWinY = myFindColor(battleWinTab);
+  --战斗胜利
+  local battleLoseTab = {battleLose_col, battleLose_pos, 95, 0, 0, width, height};
+  battleLoseX, battleLoseY = myFindColor(battleLoseTab);
+  --战斗失败
+  local battleWinDamoTab = {battleWinDamo_col, battleWinDamo_pos, 95, 0, 0, width, height};
+  battleWinDamoX, battleWinDamoY = myFindColor(battleWinDamoTab);
+  --战斗结束后的红达摩
+  local battleWinGiftTab = {battleWinGift_col, battleWinGift_pos, 95, 0, 0, width, height};
+  battleWinGiftX, battleWinGiftY = myFindColor(battleWinGiftTab);
+  --打开红达摩后的奖励
   
   if tansuoX ~= -1 and tansuoY ~= -1 then
 		sysLog("tansuoX-old="..tansuoX..", tansuoY-old="..tansuoY);
@@ -105,6 +129,44 @@ function yinyangliaotupoStart()
 		yinyangliaotupoStart();
 	elseif yinyangliaotupoPageX ~= -1 and yinyangliaotupoPageY ~= -1 then
 		tupoStart();
+	elseif attackEnableX ~= -1 and attackEnableY ~= -1 then
+		sysLog("attackEnableX-old = "..attackEnableX..", attackEnableY-old = "..attackEnableY);
+		attackEnableX = math.random(attackEnableX-60,attackEnableX+50);
+		attackEnableY	= math.random(attackEnableY-15,attackEnableY+20);
+		sysLog("attackEnableX = "..attackEnableX..", attackEnableY = "..attackEnableY);
+    tap(attackEnableX, attackEnableY);
+		yinyangliaotupoStart();
+  elseif attackDisableX ~= -1 and attackDisableY ~= -1 then
+		sysLog("attackDisableX-old = "..attackDisableX..", attackDisableY-old = "..attackDisableY);
+    if count == 1 then
+      t1 = mTime();
+    elseif count == 2 then
+      t2 = mTime();
+    elseif count == 3 then
+      t3 = mTime();
+    end
+    tap(math.random(143,370), math.random(103,671));
+		yinyangliaotupo();
+	elseif readyX ~= -1 and readyY ~= -1 then
+		sysLog("readyX-old="..readyX..", readyY-old="..readyY);
+    readyX = math.random(1136,1291);
+		readyY = math.random(525,624);
+		tap(readyX,readyY);
+		sysLog("readyX="..readyX..", readyY="..readyY);
+    mSleep(200);
+		yinyangliaotupo();
+	elseif battleWinX ~= -1 and battleWinY ~= -1 then
+    battleWin();
+    yinyangliaotupo();
+  elseif battleLoseX ~= -1 and battleLoseY ~= -1 then
+    battleLose();
+		yinyangliaotupo();
+  elseif battleWinDamoX ~= -1 and battleWinDamoY ~= -1 then
+    battleWinDamo();
+    yinyangliaotupo();
+  elseif battleWinGiftX ~= -1 and battleWinGiftY ~= -1 then
+    battleWinGift();
+		yinyangliaotupo();
 	else
 		yinyangliaotupoStart();
   end
@@ -145,7 +207,7 @@ function tupoStart()
 			sysLog("medal0yinyangliaoX = "..medal0yinyangliaoX..", medal0yinyangliaoY = "..medal0yinyangliaoY);
 			tap(medal0yinyangliaoX, medal0yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		else
 			if count == 1 then
 				t1 = mTime();
@@ -163,7 +225,7 @@ function tupoStart()
 			sysLog("medal1yinyangliaoX = "..medal1yinyangliaoX..", medal1yinyangliaoY = "..medal1yinyangliaoY);
 			tap(medal1yinyangliaoX, medal1yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		elseif medal0yinyangliaoX ~= -1 and medal0yinyangliaoY ~= -1 then
 			sysLog("medal0yinyangliaoX-old = "..medal0yinyangliaoX..", medal0yinyangliaoY-old = "..medal0yinyangliaoY);
 			medal0yinyangliaoX = math.random(medal0yinyangliaoX-100,medal0yinyangliaoX+200);
@@ -171,7 +233,7 @@ function tupoStart()
 			sysLog("medal0yinyangliaoX = "..medal0yinyangliaoX..", medal0yinyangliaoY = "..medal0yinyangliaoY);
 			tap(medal0yinyangliaoX, medal0yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		else
 			if count == 1 then
 				t1 = mTime();
@@ -189,7 +251,7 @@ function tupoStart()
 			sysLog("medal2yinyangliaoX = "..medal2yinyangliaoX..", medal2yinyangliaoY = "..medal2yinyangliaoY);
 			tap(medal2yinyangliaoX, medal2yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		elseif medal1yinyangliaoX ~= -1 and medal1yinyangliaoY ~= -1 then
 			sysLog("medal1yinyangliaoX-old = "..medal1yinyangliaoX..", medal1yinyangliaoY-old = "..medal1yinyangliaoY);
 			medal1yinyangliaoX = math.random(medal1yinyangliaoX-100,medal1yinyangliaoX+200);
@@ -197,7 +259,7 @@ function tupoStart()
 			sysLog("medal1yinyangliaoX = "..medal1yinyangliaoX..", medal1yinyangliaoY = "..medal1yinyangliaoY);
 			tap(medal1yinyangliaoX, medal1yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		elseif medal0yinyangliaoX ~= -1 and medal0yinyangliaoY ~= -1 then
 			sysLog("medal0yinyangliaoX-old = "..medal0yinyangliaoX..", medal0yinyangliaoY-old = "..medal0yinyangliaoY);
 			medal0yinyangliaoX = math.random(medal0yinyangliaoX-100,medal0yinyangliaoX+200);
@@ -205,7 +267,7 @@ function tupoStart()
 			sysLog("medal0yinyangliaoX = "..medal0yinyangliaoX..", medal0yinyangliaoY = "..medal0yinyangliaoY);
 			tap(medal0yinyangliaoX, medal0yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		else
 			if count == 1 then
 				t1 = mTime();
@@ -223,7 +285,7 @@ function tupoStart()
 			sysLog("medal3yinyangliaoX = "..medal3yinyangliaoX..", medal3yinyangliaoY = "..medal3yinyangliaoY);
 			tap(medal3yinyangliaoX, medal3yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		elseif medal2yinyangliaoX ~= -1 and medal2yinyangliaoY ~= -1 then
 			sysLog("medal2yinyangliaoX-old = "..medal2yinyangliaoX..", medal2yinyangliaoY-old = "..medal2yinyangliaoY);
 			medal2yinyangliaoX = math.random(medal2yinyangliaoX-100,medal2yinyangliaoX+200);
@@ -231,7 +293,7 @@ function tupoStart()
 			sysLog("medal2yinyangliaoX = "..medal2yinyangliaoX..", medal2yinyangliaoY = "..medal2yinyangliaoY);
 			tap(medal2yinyangliaoX, medal2yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		elseif medal1yinyangliaoX ~= -1 and medal1yinyangliaoY ~= -1 then
 			sysLog("medal1yinyangliaoX-old = "..medal1yinyangliaoX..", medal1yinyangliaoY-old = "..medal1yinyangliaoY);
 			medal1yinyangliaoX = math.random(medal1yinyangliaoX-100,medal1yinyangliaoX+200);
@@ -239,7 +301,7 @@ function tupoStart()
 			sysLog("medal1yinyangliaoX = "..medal1yinyangliaoX..", medal1yinyangliaoY = "..medal1yinyangliaoY);
 			tap(medal1yinyangliaoX, medal1yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		elseif medal0yinyangliaoX ~= -1 and medal0yinyangliaoY ~= -1 then
 			sysLog("medal0yinyangliaoX-old = "..medal0yinyangliaoX..", medal0yinyangliaoY-old = "..medal0yinyangliaoY);
 			medal0yinyangliaoX = math.random(medal0yinyangliaoX-100,medal0yinyangliaoX+200);
@@ -247,7 +309,7 @@ function tupoStart()
 			sysLog("medal0yinyangliaoX = "..medal0yinyangliaoX..", medal0yinyangliaoY = "..medal0yinyangliaoY);
 			tap(medal0yinyangliaoX, medal0yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		else
 			if count == 1 then
 				t1 = mTime();
@@ -265,7 +327,7 @@ function tupoStart()
 			sysLog("medal4yinyangliaoX = "..medal4yinyangliaoX..", medal4yinyangliaoY = "..medal4yinyangliaoY);
 			tap(medal4yinyangliaoX, medal4yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		elseif medal3yinyangliaoX ~= -1 and medal3yinyangliaoY ~= -1 then
 			sysLog("medal3yinyangliaoX-old = "..medal3yinyangliaoX..", medal3yinyangliaoY-old = "..medal3yinyangliaoY);
 			medal3yinyangliaoX = math.random(medal3yinyangliaoX-100,medal3yinyangliaoX+200);
@@ -273,7 +335,7 @@ function tupoStart()
 			sysLog("medal3yinyangliaoX = "..medal3yinyangliaoX..", medal3yinyangliaoY = "..medal3yinyangliaoY);
 			tap(medal3yinyangliaoX, medal3yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		elseif medal2yinyangliaoX ~= -1 and medal2yinyangliaoY ~= -1 then
 			sysLog("medal2yinyangliaoX-old = "..medal2yinyangliaoX..", medal2yinyangliaoY-old = "..medal2yinyangliaoY);
 			medal2yinyangliaoX = math.random(medal2yinyangliaoX-100,medal2yinyangliaoX+200);
@@ -281,7 +343,7 @@ function tupoStart()
 			sysLog("medal2yinyangliaoX = "..medal2yinyangliaoX..", medal2yinyangliaoY = "..medal2yinyangliaoY);
 			tap(medal2yinyangliaoX, medal2yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		elseif medal1yinyangliaoX ~= -1 and medal1yinyangliaoY ~= -1 then
 			sysLog("medal1yinyangliaoX-old = "..medal1yinyangliaoX..", medal1yinyangliaoY-old = "..medal1yinyangliaoY);
 			medal1yinyangliaoX = math.random(medal1yinyangliaoX-100,medal1yinyangliaoX+200);
@@ -289,7 +351,7 @@ function tupoStart()
 			sysLog("medal1yinyangliaoX = "..medal1yinyangliaoX..", medal1yinyangliaoY = "..medal1yinyangliaoY);
 			tap(medal1yinyangliaoX, medal1yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		elseif medal0yinyangliaoX ~= -1 and medal0yinyangliaoY ~= -1 then
 			sysLog("medal0yinyangliaoX-old = "..medal0yinyangliaoX..", medal0yinyangliaoY-old = "..medal0yinyangliaoY);
 			medal0yinyangliaoX = math.random(medal0yinyangliaoX-100,medal0yinyangliaoX+200);
@@ -297,7 +359,7 @@ function tupoStart()
 			sysLog("medal0yinyangliaoX = "..medal0yinyangliaoX..", medal0yinyangliaoY = "..medal0yinyangliaoY);
 			tap(medal0yinyangliaoX, medal0yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		else
 			if count == 1 then
 				t1 = mTime();
@@ -315,7 +377,7 @@ function tupoStart()
 			sysLog("medal5yinyangliaoX = "..medal5yinyangliaoX..", medal5yinyangliaoY = "..medal5yinyangliaoY);
 			tap(medal5yinyangliaoX, medal5yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		elseif medal4yinyangliaoX ~= -1 and medal4yinyangliaoY ~= -1 then
 			sysLog("medal4yinyangliaoX-old = "..medal4yinyangliaoX..", medal4yinyangliaoY-old = "..medal4yinyangliaoY);
 			medal4yinyangliaoX = math.random(medal4yinyangliaoX-100,medal4yinyangliaoX+200);
@@ -323,7 +385,7 @@ function tupoStart()
 			sysLog("medal4yinyangliaoX = "..medal4yinyangliaoX..", medal4yinyangliaoY = "..medal4yinyangliaoY);
 			tap(medal4yinyangliaoX, medal4yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		elseif medal3yinyangliaoX ~= -1 and medal3yinyangliaoY ~= -1 then
 			sysLog("medal3yinyangliaoX-old = "..medal3yinyangliaoX..", medal3yinyangliaoY-old = "..medal3yinyangliaoY);
 			medal3yinyangliaoX = math.random(medal3yinyangliaoX-100,medal3yinyangliaoX+200);
@@ -331,7 +393,7 @@ function tupoStart()
 			sysLog("medal3yinyangliaoX = "..medal3yinyangliaoX..", medal3yinyangliaoY = "..medal3yinyangliaoY);
 			tap(medal3yinyangliaoX, medal3yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		elseif medal2yinyangliaoX ~= -1 and medal2yinyangliaoY ~= -1 then
 			sysLog("medal2yinyangliaoX-old = "..medal2yinyangliaoX..", medal2yinyangliaoY-old = "..medal2yinyangliaoY);
 			medal2yinyangliaoX = math.random(medal2yinyangliaoX-100,medal2yinyangliaoX+200);
@@ -339,7 +401,7 @@ function tupoStart()
 			sysLog("medal2yinyangliaoX = "..medal2yinyangliaoX..", medal2yinyangliaoY = "..medal2yinyangliaoY);
 			tap(medal2yinyangliaoX, medal2yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		elseif medal1yinyangliaoX ~= -1 and medal1yinyangliaoY ~= -1 then
 			sysLog("medal1yinyangliaoX-old = "..medal1yinyangliaoX..", medal1yinyangliaoY-old = "..medal1yinyangliaoY);
 			medal1yinyangliaoX = math.random(medal1yinyangliaoX-100,medal1yinyangliaoX+200);
@@ -347,7 +409,7 @@ function tupoStart()
 			sysLog("medal1yinyangliaoX = "..medal1yinyangliaoX..", medal1yinyangliaoY = "..medal1yinyangliaoY);
 			tap(medal1yinyangliaoX, medal1yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		elseif medal0yinyangliaoX ~= -1 and medal0yinyangliaoY ~= -1 then
 			sysLog("medal0yinyangliaoX-old = "..medal0yinyangliaoX..", medal0yinyangliaoY-old = "..medal0yinyangliaoY);
 			medal0yinyangliaoX = math.random(medal0yinyangliaoX-100,medal0yinyangliaoX+200);
@@ -355,7 +417,7 @@ function tupoStart()
 			sysLog("medal0yinyangliaoX = "..medal0yinyangliaoX..", medal0yinyangliaoY = "..medal0yinyangliaoY);
 			tap(medal0yinyangliaoX, medal0yinyangliaoY);
 			--点击战斗对象
-			checkAttackEnable();
+			--checkAttackEnable();
 		else
 			if count == 1 then
 				t1 = mTime();
@@ -366,7 +428,7 @@ function tupoStart()
 			end
 		end
   end
-  yinyangliaotupo();
+  yinyangliaotupoStart();
 end
 
 function checkAttackEnable()
