@@ -1,8 +1,7 @@
 init("0", 1); --以当前应用 Home 键在右边初始化
 
 require "util"
-require "battle"
-require "makeTeam"
+require "battle/battle"
 require "init"
 
 function yuling()

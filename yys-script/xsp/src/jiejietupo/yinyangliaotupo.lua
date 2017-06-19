@@ -12,7 +12,7 @@ t2 = 0;
 t3 = 0;
 yinyangliaoX = -1;
 yinyangliaoY = -1;
-attackFlag = 1;
+attackFlag = 1; --战斗标记，1为可点击“攻击按钮”，2为不可点击“攻击按钮”
 
 function yinyangliaotupo()
 	local readyTab = {ready_col, ready_pos, 95, 0, 0, width, height};
@@ -43,10 +43,18 @@ function yinyangliaotupo()
 	elseif battleWinX ~= -1 and battleWinY ~= -1 then
     battleWin();
 		attackFlag = 1;
+		setCount();
     yinyangliaotupo();
   elseif battleLoseX ~= -1 and battleLoseY ~= -1 then
     battleLose();
 		attackFlag = 1;
+		if count == 1 then
+			t1 = 0;
+		elseif count == 2 then
+			t2 = 0;
+		elseif count == 3 then
+			t3 = 0;
+		end
 		yinyangliaotupo();
   elseif battleWinDamoX ~= -1 and battleWinDamoY ~= -1 then
     battleWinDamo();

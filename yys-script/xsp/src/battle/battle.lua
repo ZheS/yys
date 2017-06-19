@@ -20,7 +20,6 @@ function battle()
 	
 	if readyX ~= -1 and readyY ~= -1 then
 		ready();
-		isBattle = 1;
 	elseif battleWinX ~= -1 and battleWinY ~= -1 then
     battleWin();
   elseif battleLoseX ~= -1 and battleLoseY ~= -1 then
@@ -31,8 +30,6 @@ function battle()
     battleWinGift();
   else
   end
-	
-	
 end
 
 function ready()

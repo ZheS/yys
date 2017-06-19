@@ -71,6 +71,7 @@ function yinyangliaotupoStart()
   elseif attackDisableX ~= -1 and attackDisableY ~= -1 then
 		sysLog("attackDisableX-old = "..attackDisableX..", attackDisableY-old = "..attackDisableY);
     setTime();
+		setCount();
     tap(math.random(143,370), math.random(103,671));
 	else
 		yinyangliaotupo();

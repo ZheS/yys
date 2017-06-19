@@ -4,8 +4,9 @@ require "util"
 require "init"
 require "battle/battle"
 
+isBattle = 0;
+
 function yuhun()
-	
 	battle();
 	
 	local inviteTab = {invite_col, invite_pos, 95, 373, 186, 990, 575};
