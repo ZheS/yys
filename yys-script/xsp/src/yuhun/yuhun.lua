@@ -1,27 +1,15 @@
 init("0", 1); --以当前应用 Home 键在右边初始化
 
 require "util"
-require "battle"
-require "makeTeam"
 require "init"
+require "battle/battle"
+
+isBattle = 0;
 
 function yuhun()
 	
-  local readyTab = {ready_col, ready_pos, 95, 0, 0, width, height};
-  readyX, readyY = myFindColor(readyTab);
-  --待准备界面的鼓
-	local battleWinTab = {battleWin_col, battleWin_pos, 95, 0, 0, width, height};
-  battleWinX, battleWinY = myFindColor(battleWinTab);
-  --战斗胜利
-  local battleLoseTab = {battleLose_col, battleLose_pos, 95, 0, 0, width, height};
-  battleLoseX, battleLoseY = myFindColor(battleLoseTab);
-  --战斗失败
-  local battleWinDamoTab = {battleWinDamo_col, battleWinDamo_pos, 95, 0, 0, width, height};
-  battleWinDamoX, battleWinDamoY = myFindColor(battleWinDamoTab);
-  --战斗结束后的红达摩
-  local battleWinGiftTab = {battleWinGift_col, battleWinGift_pos, 95, 0, 0, width, height};
-  battleWinGiftX, battleWinGiftY = myFindColor(battleWinGiftTab);
-  --打开红达摩后的奖励
+	battle();
+	
 	local inviteTab = {invite_col, invite_pos, 95, 373, 186, 990, 575};
   inviteX, inviteY = myFindColor(inviteTab);
   --继续邀请
