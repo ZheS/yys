@@ -31,13 +31,7 @@ function yinyangliaotupo()
   --打开红达摩后的奖励
 	
 	if readyX ~= -1 and readyY ~= -1 then
-		if count == 1 then
-      t1 = mTime();
-    elseif count == 2 then
-      t2 = mTime();
-    elseif count == 3 then
-      t3 = mTime();
-    end
+		setTime();
 		sysLog("readyX-old="..readyX..", readyY-old="..readyY);
     readyX = math.random(1136,1291);
 		readyY = math.random(525,624);
@@ -61,27 +55,27 @@ function yinyangliaotupo()
 		yinyangliaotupo();
 	else
 		mSleep(0);
-		sysLog("count = "..count);
-		sysLog("t1 = "..t1);
-		sysLog("t2 = "..t2);
-		sysLog("t3 = "..t3);
+		--sysLog("count = "..count);
+		--sysLog("t1 = "..t1);
+		--sysLog("t2 = "..t2);
+		--sysLog("t3 = "..t3);
 		local tNow = mTime();
-		sysLog("tNow - t1 = "..tNow - t1);
-		sysLog("tNow - t2 = "..tNow - t2);
-		sysLog("tNow - t3 = "..tNow - t3);
+		--sysLog("tNow - t1 = "..tNow - t1);
+		--sysLog("tNow - t2 = "..tNow - t2);
+		--sysLog("tNow - t3 = "..tNow - t3);
 		if (tNow - t1) > 600000 then
 			count = 1;
-			sysLog("count = "..count);
+			--sysLog("count = "..count);
 			yinyangliaotupoStart();
 			yinyangliaotupo();
 		elseif (tNow - t2) > 600000 then
 			count = 2;
-			sysLog("count = "..count);
+			--sysLog("count = "..count);
 			yinyangliaotupoStart();
 			yinyangliaotupo();
 		elseif (tNow - t3) > 600000 then
 			count = 3;
-			sysLog("count = "..count);
+			--sysLog("count = "..count);
 			yinyangliaotupoStart();
 			yinyangliaotupo();
 		else
@@ -158,13 +152,7 @@ function yinyangliaotupoStart()
 		end
   elseif attackDisableX ~= -1 and attackDisableY ~= -1 then
 		sysLog("attackDisableX-old = "..attackDisableX..", attackDisableY-old = "..attackDisableY);
-    if count == 1 then
-      t1 = mTime();
-    elseif count == 2 then
-      t2 = mTime();
-    elseif count == 3 then
-      t3 = mTime();
-    end
+    setTime();
     tap(math.random(143,370), math.random(103,671));
 	else
 		yinyangliaotupo();
@@ -208,13 +196,7 @@ function tupoStart()
 			--点击战斗对象
 			--checkAttackEnable();
 		else
-			if count == 1 then
-				t1 = mTime();
-			elseif count == 2 then
-				t2 = mTime();
-			elseif count == 3 then
-				t3 = mTime();
-			end
+			setTime();
 		end
 	elseif yinyangliaotupoInput == '1' then
     if medal1yinyangliaoX ~= -1 and medal1yinyangliaoY ~= -1 then
@@ -234,13 +216,7 @@ function tupoStart()
 			--点击战斗对象
 			--checkAttackEnable();
 		else
-			if count == 1 then
-				t1 = mTime();
-			elseif count == 2 then
-				t2 = mTime();
-			elseif count == 3 then
-				t3 = mTime();
-			end
+			setTime();
 		end
 	elseif yinyangliaotupoInput == '2' then
     if medal2yinyangliaoX ~= -1 and medal2yinyangliaoY ~= -1 then
@@ -268,13 +244,7 @@ function tupoStart()
 			--点击战斗对象
 			--checkAttackEnable();
 		else
-			if count == 1 then
-				t1 = mTime();
-			elseif count == 2 then
-				t2 = mTime();
-			elseif count == 3 then
-				t3 = mTime();
-			end
+			setTime();
 		end
 	elseif yinyangliaotupoInput == '3' then
     if medal3yinyangliaoX ~= -1 and medal3yinyangliaoY ~= -1 then
@@ -310,13 +280,7 @@ function tupoStart()
 			--点击战斗对象
 			--checkAttackEnable();
 		else
-			if count == 1 then
-				t1 = mTime();
-			elseif count == 2 then
-				t2 = mTime();
-			elseif count == 3 then
-				t3 = mTime();
-			end
+			setTime();
 		end
 	elseif yinyangliaotupoInput == '4' then
     if medal4yinyangliaoX ~= -1 and medal4yinyangliaoY ~= -1 then
@@ -360,13 +324,7 @@ function tupoStart()
 			--点击战斗对象
 			--checkAttackEnable();
 		else
-			if count == 1 then
-				t1 = mTime();
-			elseif count == 2 then
-				t2 = mTime();
-			elseif count == 3 then
-				t3 = mTime();
-			end
+			setTime();
 		end
 	elseif yinyangliaotupoInput == '5' then
     if medal5yinyangliaoX ~= -1 and medal5yinyangliaoY ~= -1 then
@@ -418,79 +376,20 @@ function tupoStart()
 			--点击战斗对象
 			--checkAttackEnable();
 		else
-			if count == 1 then
-				t1 = mTime();
-			elseif count == 2 then
-				t2 = mTime();
-			elseif count == 3 then
-				t3 = mTime();
-			end
+			setTime();
 		end
   end
 end
 
-function checkAttackEnable()
-	mSleep(1000);
-  local attackEnableTab = {attackEnable_col, attackEnable_pos, 95, 0, 0, width, height};
-  attackEnableX, attackEnableY = myFindColor(attackEnableTab);
-  --攻击按钮可用
-	
-	local attackDisableTab = {attackDisable_col, attackDisable_pos, 95, 0, 0, width, height};
-  attackDisableX, attackDisableY = myFindColor(attackDisableTab);
-  --攻击按钮不可用
-  sysLog("attackDisableX = "..attackDisableX..", attackDisableY = "..attackDisableY);
-  if attackEnableX ~= -1 and attackEnableY ~= -1 then
-		sysLog("attackEnableX-old = "..attackEnableX..", attackEnableY-old = "..attackEnableY);
-		attackEnableX = math.random(attackEnableX-60,attackEnableX+50);
-		attackEnableY	= math.random(attackEnableY-15,attackEnableY+20);
-		sysLog("attackEnableX = "..attackEnableX..", attackEnableY = "..attackEnableY);
-    tap(attackEnableX, attackEnableY);
-		checkYinyangliaotupo();
-  elseif attackDisableX ~= -1 and attackDisableY ~= -1 then
-    if count == 1 then
-      t1 = mTime();
-    elseif count == 2 then
-      t2 = mTime();
-    elseif count == 3 then
-      t3 = mTime();
-    end
-    tap(math.random(143,370), math.random(103,671));
-  end
-end
-
-function checkYinyangliaotupo()
-	mSleep(3000);
-  local attackEnableTab = {attackEnable_col, attackEnable_pos, 95, 0, 0, width, height};
-  attackEnableX, attackEnableY = myFindColor(attackEnableTab);
-  --攻击按钮可用
-  
-  if attackEnableX ~= -1 and attackEnableY ~= -1 then
-    --检测到攻击按钮可用
-    tap(math.random(143,370), math.random(103,671));
-		tap(math.random(1207,1258), math.random(52,92));
-		yinyangliaotupo();
-  else
-    if count == 1 then
-      t1 = mTime();
-    elseif count == 2 then
-      t2 = mTime();
-    elseif count == 3 then
-      t3 = mTime();
-    end
-    battle();
-    yinyangliaotupo();	
-  end
-end
-
-function tupoClose()
-	mSleep(1000);
-  local tupoCloseTab = {tupoClose_col, tupoClose_pos, 95, 0, 0, width, height};
-  tupoCloseX, tupoCloseY = myFindColor(tupoCloseTab);
-  --结界突破关闭按钮
-  sysLog("tupoCloseX="..tupoCloseX..", tupoCloseY="..tupoCloseY);
-	if tupoCloseX ~= -1 and tupoCloseY ~= -1 then
-		tap(tupoCloseX, tupoCloseY)
-	else
-		checkYinyangliaotupo();
+function setTime()
+	if count == 1 then
+		t1 = mTime();
+		count = 0;
+	elseif count == 2 then
+		t2 = mTime();
+		count = 0;
+	elseif count == 3 then
+		t3 = mTime();
+		count = 0;
 	end
 end
