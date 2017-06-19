@@ -23,18 +23,13 @@ function battle()
 		isBattle = 1;
 	elseif battleWinX ~= -1 and battleWinY ~= -1 then
     battleWin();
-		isBattle = 1;
   elseif battleLoseX ~= -1 and battleLoseY ~= -1 then
     battleLose();
-		isBattle = 1;
   elseif battleWinDamoX ~= -1 and battleWinDamoY ~= -1 then
     battleWinDamo();
-		isBattle = 1;
   elseif battleWinGiftX ~= -1 and battleWinGiftY ~= -1 then
     battleWinGift();
-		isBattle = 1;
   else
-		isBattle = 0;
   end
 	
 	

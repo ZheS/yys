@@ -4,8 +4,6 @@ require "util"
 require "init"
 require "battle/battle"
 
-isBattle = 0;
-
 function yuhun()
 	
 	battle();
@@ -17,15 +15,7 @@ function yuhun()
   fangzhuYesX, fangzhuYesY = myFindColor(fangzhuYesTab);
   --组队界面
 	
-  if readyX ~= -1 and readyY ~= -1 then
-		sysLog("readyX-old="..readyX..", readyY-old="..readyY);
-    readyX = math.random(1136,1291);
-		readyY = math.random(525,624);
-		tap(readyX,readyY);
-		sysLog("readyX="..readyX..", readyY="..readyY);
-    mSleep(200);
-		yuhun();
-	elseif inviteX ~= -1 and inviteY ~= -1 then
+  if inviteX ~= -1 and inviteY ~= -1 then
 		sysLog("inviteX-old="..inviteX..", inviteY-old="..inviteY);
 		inviteX = math.random(707,872);
 		inviteY = math.random(427,471);
@@ -56,18 +46,6 @@ function yuhun()
 				mSleep(200);
 			end
 		end
-		yuhun();
-	elseif battleWinX ~= -1 and battleWinY ~= -1 then
-    battleWin();
-    yuhun();
-  elseif battleLoseX ~= -1 and battleLoseY ~= -1 then
-    battleLose();
-		yuhun();
-  elseif battleWinDamoX ~= -1 and battleWinDamoY ~= -1 then
-    battleWinDamo();
-    yuhun();
-  elseif battleWinGiftX ~= -1 and battleWinGiftY ~= -1 then
-    battleWinGift();
 		yuhun();
   else
     yuhun();
