@@ -4,11 +4,5 @@ require "util"
 require "init"
 
 function setCount()
-	if count == 1 then
-		count = 0;
-	elseif count == 2 then
-		count = 0;
-	elseif count == 3 then
-		count = 0;
-	end
+	count = 0;
 end

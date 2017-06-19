@@ -33,6 +33,7 @@ function yinyangliaotupo()
 	
 	if readyX ~= -1 and readyY ~= -1 then
 		setTime();
+		countTemp = count; --临时记录进入战斗界面时的count值（记录打的是第几个寮）
 		sysLog("readyX-old="..readyX..", readyY-old="..readyY);
     readyX = math.random(1136,1291);
 		readyY = math.random(525,624);
@@ -48,11 +49,11 @@ function yinyangliaotupo()
   elseif battleLoseX ~= -1 and battleLoseY ~= -1 then
     battleLose();
 		attackFlag = 1;
-		if count == 1 then
+		if countTemp == 1 then
 			t1 = 0;
-		elseif count == 2 then
+		elseif countTemp == 2 then
 			t2 = 0;
-		elseif count == 3 then
+		elseif countTemp == 3 then
 			t3 = 0;
 		end
 		yinyangliaotupo();
