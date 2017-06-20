@@ -3,6 +3,7 @@ init("0", 1); --以当前应用 Home 键在右边初始化
 require "util"
 require "init"
 require "jiejietupo.setTime"
+require "jiejietupo.setCount"
 
 function tupoStart()
   if count == 1 then
@@ -42,6 +43,7 @@ function tupoStart()
 			--checkAttackEnable();
 		else
 			setTime();
+			setCount();
 		end
 	elseif yinyangliaotupoInput == '1' then
     if medal1yinyangliaoX ~= -1 and medal1yinyangliaoY ~= -1 then
@@ -62,6 +64,7 @@ function tupoStart()
 			--checkAttackEnable();
 		else
 			setTime();
+			setCount();
 		end
 	elseif yinyangliaotupoInput == '2' then
     if medal2yinyangliaoX ~= -1 and medal2yinyangliaoY ~= -1 then
@@ -90,6 +93,7 @@ function tupoStart()
 			--checkAttackEnable();
 		else
 			setTime();
+			setCount();
 		end
 	elseif yinyangliaotupoInput == '3' then
     if medal3yinyangliaoX ~= -1 and medal3yinyangliaoY ~= -1 then
@@ -126,6 +130,7 @@ function tupoStart()
 			--checkAttackEnable();
 		else
 			setTime();
+			setCount();
 		end
 	elseif yinyangliaotupoInput == '4' then
     if medal4yinyangliaoX ~= -1 and medal4yinyangliaoY ~= -1 then
@@ -170,6 +175,7 @@ function tupoStart()
 			--checkAttackEnable();
 		else
 			setTime();
+			setCount();
 		end
 	elseif yinyangliaotupoInput == '5' then
     if medal5yinyangliaoX ~= -1 and medal5yinyangliaoY ~= -1 then
@@ -222,6 +228,7 @@ function tupoStart()
 			--checkAttackEnable();
 		else
 			setTime();
+			setCount();
 		end
   end
 end

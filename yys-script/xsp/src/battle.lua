@@ -33,7 +33,7 @@ function battleStart()
   mSleep(500);
   local readyTab = {ready_col, ready_pos, 95, 0, 0, width, height};
   readyX, readyY = myFindColor(readyTab);
-  --å¾…å‡†å¤‡ç•Œé¢çš„é¼“
+  --´ı×¼±¸½çÃæµÄ¹Ä
   sysLog("readyX="..readyX..", readyY="..readyY);
   if readyX ~= -1 and readyY ~= -1 then
     tap(readyX,readyY);
@@ -55,16 +55,16 @@ function battleFinish()
   mSleep(500);
   local battleWinTab = {battleWin_col, battleWin_pos, 95, 0, 0, width, height};
   battleWinX, battleWinY = myFindColor(battleWinTab);
-  --æˆ˜æ–—èƒœåˆ©
+  --Õ½¶·Ê¤Àû
   local battleLoseTab = {battleLose_col, battleLose_pos, 95, 0, 0, width, height};
   battleLoseX, battleLoseY = myFindColor(battleLoseTab);
-  --æˆ˜æ–—å¤±è´¥
+  --Õ½¶·Ê§°Ü
   local battleWinDamoTab = {battleWinDamo_col, battleWinDamo_pos, 95, 0, 0, width, height};
   battleWinDamoX, battleWinDamoY = myFindColor(battleWinDamoTab);
-  --æˆ˜æ–—ç»“æŸåçš„çº¢è¾¾æ‘©
+  --Õ½¶·½áÊøºóµÄºì´ïÄ¦
   local battleWinGiftTab = {battleWinGift_col, battleWinGift_pos, 95, 0, 0, width, height};
   battleWinGiftX, battleWinGiftY = myFindColor(battleWinGiftTab);
-  --æ‰“å¼€çº¢è¾¾æ‘©åçš„å¥–åŠ±
+  --´ò¿ªºì´ïÄ¦ºóµÄ½±Àø
   
   sysLog("battleWinX="..battleWinX..", battleWinY="..battleWinY);
   sysLog("battleLoseX="..battleLoseX..", battleLoseY="..battleLoseY);
