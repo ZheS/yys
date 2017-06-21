@@ -48,7 +48,10 @@ function yinyangliaotupoStart()
     tap(yinyangliaotupoX,yinyangliaotupoY);
 		yinyangliaotupoStart();
 	elseif yinyangliaotupoPageX ~= -1 and yinyangliaotupoPageY ~= -1 then
-		tupoStart();
+		if count ~= 0 then
+			tupoStart();
+		else 
+		end
 		yinyangliaotupoStart();
 	elseif attackEnableX ~= -1 and attackEnableY ~= -1 then
 		if attackFlag == 1 then

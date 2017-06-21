@@ -6,3 +6,14 @@ require "init"
 function setCount()
 	count = 0;
 end
+
+function addCount()
+	if count == 1 then
+		count = 2;
+	elseif count == 2 then
+		count = 3;
+	elseif count == 3 then
+		count = 0;
+	else
+	end
+end
