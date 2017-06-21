@@ -44,7 +44,9 @@ function yinyangliaotupo()
 	elseif battleWinX ~= -1 and battleWinY ~= -1 then
     battleWin();
 		attackFlag = 1;
-		setCount();
+		if countTemp ~= 0 then
+			setCount();
+		end
     yinyangliaotupo();
   elseif battleLoseX ~= -1 and battleLoseY ~= -1 then
     battleLose();
