@@ -28,19 +28,26 @@ end
 function chooseMedal1()
 	local medal1yinyangliaoTab = {medal1yinyangliao_col, medal1yinyangliao_pos, 95, 0, 0, width, height};
   medal1yinyangliaoX, medal1yinyangliaoY = myFindColor(medal1yinyangliaoTab);
+	local medal0yinyangliaoTab = {medal0yinyangliao_col, medal0yinyangliao_pos, 95, 0, 0, width, height};
+  medal0yinyangliaoX, medal0yinyangliaoY = myFindColor(medal0yinyangliaoTab);
 	if medal1yinyangliaoX ~= -1 and medal1yinyangliaoY ~= -1 then
 		medal1yinyangliao();
 	elseif medal0yinyangliaoX ~= -1 and medal0yinyangliaoY ~= -1 then
 		medal0yinyangliao();
 	else
-		setTime();
-		addCount();
+		moveYinyangliao();
+		mSleep(2000);
+		chooseMedal1();
 	end
 end
 
 function chooseMedal2()
 	local medal2yinyangliaoTab = {medal2yinyangliao_col, medal2yinyangliao_pos, 95, 0, 0, width, height};
   medal2yinyangliaoX, medal2yinyangliaoY = myFindColor(medal2yinyangliaoTab);
+	local medal1yinyangliaoTab = {medal1yinyangliao_col, medal1yinyangliao_pos, 95, 0, 0, width, height};
+  medal1yinyangliaoX, medal1yinyangliaoY = myFindColor(medal1yinyangliaoTab);
+	local medal0yinyangliaoTab = {medal0yinyangliao_col, medal0yinyangliao_pos, 95, 0, 0, width, height};
+  medal0yinyangliaoX, medal0yinyangliaoY = myFindColor(medal0yinyangliaoTab);
 	if medal2yinyangliaoX ~= -1 and medal2yinyangliaoY ~= -1 then
 		medal2yinyangliao();
 	elseif medal1yinyangliaoX ~= -1 and medal1yinyangliaoY ~= -1 then
@@ -48,14 +55,21 @@ function chooseMedal2()
 	elseif medal0yinyangliaoX ~= -1 and medal0yinyangliaoY ~= -1 then
 		medal0yinyangliao();
 	else
-		setTime();
-		addCount();
+		moveYinyangliao();
+		mSleep(2000);
+		chooseMedal2();
 	end
 end
 
 function chooseMedal3()
 	local medal3yinyangliaoTab = {medal3yinyangliao_col, medal3yinyangliao_pos, 95, 0, 0, width, height};
   medal3yinyangliaoX, medal3yinyangliaoY = myFindColor(medal3yinyangliaoTab);
+	local medal2yinyangliaoTab = {medal2yinyangliao_col, medal2yinyangliao_pos, 95, 0, 0, width, height};
+  medal2yinyangliaoX, medal2yinyangliaoY = myFindColor(medal2yinyangliaoTab);
+	local medal1yinyangliaoTab = {medal1yinyangliao_col, medal1yinyangliao_pos, 95, 0, 0, width, height};
+  medal1yinyangliaoX, medal1yinyangliaoY = myFindColor(medal1yinyangliaoTab);
+	local medal0yinyangliaoTab = {medal0yinyangliao_col, medal0yinyangliao_pos, 95, 0, 0, width, height};
+  medal0yinyangliaoX, medal0yinyangliaoY = myFindColor(medal0yinyangliaoTab);
   if medal3yinyangliaoX ~= -1 and medal3yinyangliaoY ~= -1 then
 		medal3yinyangliao();
 	elseif medal2yinyangliaoX ~= -1 and medal2yinyangliaoY ~= -1 then
@@ -65,14 +79,23 @@ function chooseMedal3()
 	elseif medal0yinyangliaoX ~= -1 and medal0yinyangliaoY ~= -1 then
 		medal0yinyangliao();
 	else
-		setTime();
-		addCount();
+		moveYinyangliao();
+		mSleep(2000);
+		chooseMedal3();
 	end
 end
 
 function chooseMedal4()
 	local medal4yinyangliaoTab = {medal4yinyangliao_col, medal4yinyangliao_pos, 95, 0, 0, width, height};
   medal4yinyangliaoX, medal4yinyangliaoY = myFindColor(medal4yinyangliaoTab);
+	local medal3yinyangliaoTab = {medal3yinyangliao_col, medal3yinyangliao_pos, 95, 0, 0, width, height};
+  medal3yinyangliaoX, medal3yinyangliaoY = myFindColor(medal3yinyangliaoTab);
+	local medal2yinyangliaoTab = {medal2yinyangliao_col, medal2yinyangliao_pos, 95, 0, 0, width, height};
+  medal2yinyangliaoX, medal2yinyangliaoY = myFindColor(medal2yinyangliaoTab);
+	local medal1yinyangliaoTab = {medal1yinyangliao_col, medal1yinyangliao_pos, 95, 0, 0, width, height};
+  medal1yinyangliaoX, medal1yinyangliaoY = myFindColor(medal1yinyangliaoTab);
+	local medal0yinyangliaoTab = {medal0yinyangliao_col, medal0yinyangliao_pos, 95, 0, 0, width, height};
+  medal0yinyangliaoX, medal0yinyangliaoY = myFindColor(medal0yinyangliaoTab);
 	if medal4yinyangliaoX ~= -1 and medal4yinyangliaoY ~= -1 then
 		medal4yinyangliao();
 	elseif medal3yinyangliaoX ~= -1 and medal3yinyangliaoY ~= -1 then
@@ -84,14 +107,25 @@ function chooseMedal4()
 	elseif medal0yinyangliaoX ~= -1 and medal0yinyangliaoY ~= -1 then
 		medal0yinyangliao();
 	else
-		setTime();
-		addCount();
+		moveYinyangliao();
+		mSleep(2000);
+		chooseMedal4();
 	end
 end
 
 function chooseMedal5()
 	local medal5yinyangliaoTab = {medal5yinyangliao_col, medal5yinyangliao_pos, 95, 0, 0, width, height};
   medal5yinyangliaoX, medal5yinyangliaoY = myFindColor(medal5yinyangliaoTab);
+	local medal4yinyangliaoTab = {medal4yinyangliao_col, medal4yinyangliao_pos, 95, 0, 0, width, height};
+  medal4yinyangliaoX, medal4yinyangliaoY = myFindColor(medal4yinyangliaoTab);
+	local medal3yinyangliaoTab = {medal3yinyangliao_col, medal3yinyangliao_pos, 95, 0, 0, width, height};
+  medal3yinyangliaoX, medal3yinyangliaoY = myFindColor(medal3yinyangliaoTab);
+	local medal2yinyangliaoTab = {medal2yinyangliao_col, medal2yinyangliao_pos, 95, 0, 0, width, height};
+  medal2yinyangliaoX, medal2yinyangliaoY = myFindColor(medal2yinyangliaoTab);
+	local medal1yinyangliaoTab = {medal1yinyangliao_col, medal1yinyangliao_pos, 95, 0, 0, width, height};
+  medal1yinyangliaoX, medal1yinyangliaoY = myFindColor(medal1yinyangliaoTab);
+	local medal0yinyangliaoTab = {medal0yinyangliao_col, medal0yinyangliao_pos, 95, 0, 0, width, height};
+  medal0yinyangliaoX, medal0yinyangliaoY = myFindColor(medal0yinyangliaoTab);
 	if medal5yinyangliaoX ~= -1 and medal5yinyangliaoY ~= -1 then
 		medal5yinyangliao();
 	elseif medal4yinyangliaoX ~= -1 and medal4yinyangliaoY ~= -1 then
@@ -105,8 +139,9 @@ function chooseMedal5()
 	elseif medal0yinyangliaoX ~= -1 and medal0yinyangliaoY ~= -1 then
 		medal0yinyangliao();
 	else
-		setTime();
-		addCount();
+		moveYinyangliao();
+		mSleep(2000);
+		chooseMedal5();
 	end
 end
 
