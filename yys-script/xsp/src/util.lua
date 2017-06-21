@@ -6,6 +6,30 @@ function tap(x, y)
   touchUp(1, x, y);
 end
 
+function move(x1,y1,x2,y2)
+	touchDown(1, x1, y1)
+	mSleep(50)
+	r = math.random(10,20);
+	i1 = x1;
+	i2 = x2;
+	i3 = (x2-x1)/r;
+	for i = i1,i2,i3 do 
+		j1 = y1;
+		j2 = y2;
+		j3 = (y2-y1)/r;
+		for j = 0, j3, j3 do 
+		--math.abs绝对值
+			x1 = math.random(i-math.abs(i3)*0.1 , i+math.abs(i3)*0.1);
+			y1 = math.random(y1+j-math.abs(j3)*0.1 , y1+j+math.abs(j3)*0.1);
+			touchMove(1, x1 , y1);
+			sysLog("x1="..x1.."y1="..y1);
+			mSleep(50); --延迟
+		end
+	end
+	mSleep(50)
+	touchUp(1, x2, y2)
+end
+
 function myFindColor(input)
 	rewardSelect();
   keepScreen(true);
