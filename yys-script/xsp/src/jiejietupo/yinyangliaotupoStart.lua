@@ -59,9 +59,10 @@ function yinyangliaotupoStart()
 			sysLog("attackEnableX-old = "..attackEnableX..", attackEnableY-old = "..attackEnableY);
 			attackEnableX = math.random(attackEnableX-60,attackEnableX+50);
 			attackEnableY	= math.random(attackEnableY-15,attackEnableY+20);
-			sysLog("attackEnableX = "..attackEnableX..", attackEnableY = "..attackEnableY);
 			tap(attackEnableX, attackEnableY);
+			sysLog("attackEnableX = "..attackEnableX..", attackEnableY = "..attackEnableY);
 			attackFlag = 2;
+			countTemp = count;
 			mSleep(1000);
 		elseif attackFlag == 2 then
 			tap(math.random(143,370), math.random(103,671)); -- 空白处随便点一下
@@ -70,6 +71,7 @@ function yinyangliaotupoStart()
 			tap(math.random(1207,1258), math.random(52,92)); -- 关闭结界突破界面
 			sysLog("关闭结界突破界面");
 			attackFlag = 1;
+			countTemp = 0;
 		end
   elseif attackDisableX ~= -1 and attackDisableY ~= -1 then
 		sysLog("attackDisableX-old = "..attackDisableX..", attackDisableY-old = "..attackDisableY);

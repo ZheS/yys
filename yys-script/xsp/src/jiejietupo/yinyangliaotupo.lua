@@ -6,7 +6,8 @@ require "battle"
 require "jiejietupo/yinyangliaotupoStart"
 require "makeTeam"
 
-count = 0;
+count = 0; --记录即将攻略的阴阳寮序号
+countTemp = 0; --记录正在攻略的阴阳寮序号
 t1 = 0;
 t2 = 0;
 t3 = 0;
@@ -32,8 +33,7 @@ function yinyangliaotupo()
   --打开红达摩后的奖励
 	
 	if readyX ~= -1 and readyY ~= -1 then
-		setTime();
-		countTemp = count; --临时记录进入战斗界面时的count值（记录打的是第几个寮）
+		addTime();
 		sysLog("readyX-old="..readyX..", readyY-old="..readyY);
     readyX = math.random(1136,1291);
 		readyY = math.random(525,624);
@@ -44,20 +44,12 @@ function yinyangliaotupo()
 	elseif battleWinX ~= -1 and battleWinY ~= -1 then
     battleWin();
 		attackFlag = 1;
-		if countTemp ~= 0 then
-			setCount();
-		end
+		resetCount();
     yinyangliaotupo();
   elseif battleLoseX ~= -1 and battleLoseY ~= -1 then
     battleLose();
 		attackFlag = 1;
-		if countTemp == 1 then
-			t1 = 0;
-		elseif countTemp == 2 then
-			t2 = 0;
-		elseif countTemp == 3 then
-			t3 = 0;
-		end
+		resetTime();
 		yinyangliaotupo();
   elseif battleWinDamoX ~= -1 and battleWinDamoY ~= -1 then
     battleWinDamo();
