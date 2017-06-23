@@ -15,23 +15,24 @@ end
 sysLog("setting.mainSelect = "..setting.mainSelect);
 sysLog("setting.rewardSelect = "..setting.rewardSelect);
 
+mainInput = setting.mainSelect;
 rewardInput = setting.rewardSelect;
 
-if setting.mainSelect == "0" then
-	start,setting = showUI("yaoqifengyin/yaoqifengyin.json")--显示UI并获取设置
+if mainInput == "0" then
+	start,setting = showUI("jiejietupo/yinyangliaotupo.json")--显示UI并获取设置
 	if start == 0 then
 		sysLog("取消执行")
 		lua_exit()--取消则退出
 	end
-	tiaotiaogegeInput = setting.tiaotiaogege;
-	guishiheiInput = setting.guishihei;
-	gunvInput = setting.gunv;
-	erkounvInput = setting.erkounv;
-	haifangzhuInput = setting.haifangzhu;
-	eguiInput = setting.egui;
-	jiaotuInput = setting.jiaotu;
-	yaoqifengyin();
-elseif setting.mainSelect == "1" then
+	yinyangliaotupoInput = setting.yinyangliaotupoSelect;
+	start,setting = showUI("yuhun/yuhun_main.json")--显示UI并获取设置
+	if start == 0 then
+		sysLog("取消执行")
+		lua_exit()--取消则退出
+	end
+	playerAccountInput = setting.playerAccountSelect;
+	yinyangliaotupo();
+elseif mainInput == "1" then
 	start,setting = showUI("jiejietupo/jiejietupo_main.json")--显示UI并获取设置
 	if start == 0 then
 		sysLog("取消执行")
@@ -48,7 +49,7 @@ elseif setting.mainSelect == "1" then
 			yinyangliaotupoInput = setting.yinyangliaotupoSelect;
 			yinyangliaotupo();
 		end
-elseif setting.mainSelect == "2" then
+elseif mainInput == "2" then
 	start,setting = showUI("yuhun/yuhun_main.json")--显示UI并获取设置
 	if start == 0 then
 		sysLog("取消执行")
@@ -56,7 +57,7 @@ elseif setting.mainSelect == "2" then
 	end
 	playerAccountInput = setting.playerAccountSelect;
 	yuhun();
-elseif setting.mainSelect == "3" then
+elseif mainInput == "3" then
 	yuling();
 end
 
