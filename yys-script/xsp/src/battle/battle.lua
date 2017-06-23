@@ -37,6 +37,7 @@ function ready()
 	readyX = math.random(1136,1291);
 	readyY = math.random(525,624);
 	tap(readyX,readyY);
+	mSleep(500);
 	sysLog("readyX="..readyX..", readyY="..readyY);
 end
 
