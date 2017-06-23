@@ -3,8 +3,9 @@ init("0", 1); --以当前应用 Home 键在右边初始化
 require "util"
 require "init"
 
-function setCount()
+function resetCount()
 	count = 0;
+	countTemp = 0;
 end
 
 function addCount()
