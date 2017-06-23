@@ -31,15 +31,13 @@ function yinyangliaotupo()
   local battleWinGiftTab = {battleWinGift_col, battleWinGift_pos, 95, 0, 0, width, height};
   battleWinGiftX, battleWinGiftY = myFindColor(battleWinGiftTab);
   --打开红达摩后的奖励
+	local rejectJoinTeamTab = {rejectJoinTeam_col, rejectJoinTeam_pos, 95, 0, 0, width, height};
+  rejectJoinTeamX, rejectJoinTeamY = myFindColor(rejectJoinTeamTab);
+  --邀请组队界面中的取消图标
 	
 	if readyX ~= -1 and readyY ~= -1 then
 		addTime();
-		sysLog("readyX-old="..readyX..", readyY-old="..readyY);
-    readyX = math.random(1136,1291);
-		readyY = math.random(525,624);
-		tap(readyX,readyY);
-		sysLog("readyX="..readyX..", readyY="..readyY);
-    mSleep(200);
+		ready();
 		yinyangliaotupo();
 	elseif battleWinX ~= -1 and battleWinY ~= -1 then
     battleWin();
@@ -56,6 +54,13 @@ function yinyangliaotupo()
     yinyangliaotupo();
   elseif battleWinGiftX ~= -1 and battleWinGiftY ~= -1 then
     battleWinGift();
+		yinyangliaotupo();
+	elseif rejectJoinTeamX ~= -1 and rejectJoinTeamY ~= -1 then
+    sysLog("rejectJoinTeamX-old="..rejectJoinTeamX..", rejectJoinTeamY-old="..rejectJoinTeamY);
+		rejectJoinTeamX = math.random(462,624);
+		rejectJoinTeamY = math.random(430,470);
+		tap(rejectJoinTeamX,rejectJoinTeamY);
+		sysLog("rejectJoinTeamX="..rejectJoinTeamX..", rejectJoinTeamY="..rejectJoinTeamY);
 		yinyangliaotupo();
 	else
 		mSleep(0);
@@ -83,8 +88,13 @@ function yinyangliaotupo()
 			yinyangliaotupoStart();
 			yinyangliaotupo();
 		else
-			rewardSelect();
-			yinyangliaotupo();
+			if mainInput == "0" then
+				yuhunStart();
+			elseif mainInput == "1" then
+				rewardSelect();
+				yinyangliaotupo();
+			else
+			end
 		end
   end
 end

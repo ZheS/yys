@@ -14,7 +14,7 @@
          "views" : [
 						{
 	            "id" : "mainSelect",
-	            "list" : "妖气封印,结界突破,御魂,御灵",
+	            "list" : "阴阳寮突破+御魂10,结界突破,御魂,御灵",
 	            "select" : "0",
 	            "size" : "330",
 	            "type" : "RadioGroup",
