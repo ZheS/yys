@@ -36,12 +36,10 @@ leaveTeam_col = ""				--队伍中界面的离开队伍按钮主颜色
 leaveTeam_pos = ""				--队伍中界面的离开队伍按钮周边颜色
 trueButton_col = ""				--离开队伍后的确定按钮主颜色
 trueButton_pos = ""				--离开队伍后的确定按钮周边颜色
-
 manualButton_col = ""				--战斗界面左下角手动按钮主颜色
 manualButton_pos = ""				--战斗界面左下角手动按钮周边颜色
 autoButton_col = ""				--战斗界面左下角自动按钮主颜色
 autoButton_pos = ""				--战斗界面左下角自动按钮周边颜色
-
 battleWin_col = ""				--战斗胜利界面主颜色
 battleWin_pos = ""				--战斗胜利界面周边颜色
 battleLose_col = ""				--战斗失败界面主颜色
@@ -62,8 +60,8 @@ yinyangliaotupo_col = ""				--阴阳寮突破按钮主颜色
 yinyangliaotupo_pos = ""				--阴阳寮突破按钮周边颜色
 yinyangliaotupoPage_col = ""				--阴阳寮突破界面主颜色
 yinyangliaotupoPage_pos = ""				--阴阳寮突破界面周边颜色
-tupoClose_col = ""				--结界突破关闭按钮主颜色
-tupoClose_pos = ""				--结界突破关闭按钮周边颜色
+windowClose_col = ""				--深褐色关闭按钮主颜色
+windowClose_col = ""				--深褐色关闭按钮周边颜色
 medal5yinyangliao_col = ""				--阴阳寮突破5勋章主颜色
 medal5yinyangliao_pos = ""				--阴阳寮突破5勋章周边颜色
 medal4yinyangliao_col = ""				--阴阳寮突破4勋章主颜色
@@ -82,14 +80,22 @@ attackDisable_col = ""				--攻击按钮不可用主颜色
 attackDisable_pos = ""				--攻击按钮不可用周边颜色	
 tansuo_col = ""				--探索灯笼按钮主颜色
 tansuo_pos = ""				--探索灯笼按钮周边颜色
-
 invite_col = ""			--战斗结束后的继续邀请按钮主颜色
 invite_pos = ""			--战斗结束后的继续邀请按钮周边颜色
 inviteJoinTeam_col = ""  --组队界面中的邀请图标主颜色
 inviteJoinTeam_pos = ""  --组队界面中的邀请图标周边颜色
-
 challengeBotton_col = ""  --挑战按钮主颜色
 challengeBotton_pos = ""  --挑战按钮周边颜色
+yuhun_col = "" --御魂按钮主颜色
+yuhun_pos = "" --御魂按钮周边颜色
+dashe_col = "" --八歧大蛇图标主颜色
+dashe_pos = "" --八歧大蛇图标周边颜色
+yuhunzudui_col = "" --御魂组队界面主颜色
+yuhunzudui_pos = "" --御魂组队界面周边颜色
+yuhunCreateTeam_col = "" --御魂创建队伍界面主颜色
+yuhunCreateTeam_pos = "" --御魂创建队伍界面周边颜色
+yuhunCreateTeamDetail_col = "" --御魂创建队伍明细界面主颜色
+yuhunCreateTeamDetail_pos = "" --御魂创建队伍明细界面周边颜色
 
 
 if width==1334 and height==750 then
@@ -151,8 +157,8 @@ if width==1334 and height==750 then
   yinyangliaotupo_pos = "8|-26|0xa29585,-8|-8|0xaba091,9|17|0xaca293,-10|21|0xa69a8a,9|46|0xaa9f90,-2|54|0xa49888,0|24|0x5c3c25,-27|-40|0x271910,25|63|0x24170e"				--阴阳寮突破按钮周边颜色
   yinyangliaotupoPage_col = "0xb9661a"				--阴阳寮突破界面主颜色
   yinyangliaotupoPage_pos = "9|-27|0xe7deca,-2|55|0xe7dcc7,-30|-41|0xf8f3e0,26|63|0xf8f3e0,-20|-31|0x6e4423,19|48|0x6e4321,32|-44|0x794e2d,-34|65|0x875a36"				--阴阳寮突破界面周边颜色
-  tupoClose_col = "0xe5aeb3"				--结界突破关闭按钮主颜色
-  tupoClose_pos = "7|-10|0xe8d4cf,-14|-3|0x733236,7|24|0x66463d,20|-2|0x682d3f,-1|-31|0x592d2d,0|29|0x432223,-32|-3|0x522924,30|0|0x62293f"				--结界突破关闭按钮周边颜色
+  windowClose_col = "0xe5aeb3"				--深褐色关闭按钮主颜色
+  windowClose_pos = "7|-10|0xe8d4cf,-14|-3|0x733236,7|24|0x66463d,20|-2|0x682d3f,-1|-31|0x592d2d,0|29|0x432223,-32|-3|0x522924,30|0|0x62293f"				--深褐色关闭按钮周边颜色
   medal5yinyangliao_col = "0x7f7a74"				--阴阳寮突破5勋章主颜色
   medal5yinyangliao_pos = "164|-1|0x7f7973,-16|0|0xa2a19a,179|-1|0xaea8a1,-6|-14|0xcac6c0,175|8|0xb9b4ae,-10|4|0xa9a49e,163|14|0xb1ada7,155|-11|0xc9c5bf,215|-80|0xc6b29b"				--阴阳寮突破5勋章周边颜色
   medal4yinyangliao_col = "0x7f7a74"				--阴阳寮突破4勋章主颜色
@@ -177,5 +183,15 @@ if width==1334 and height==750 then
 	inviteJoinTeam_pos = "7|-40|0xf3e7ab,42|-38|0xddc26d,60|-35|0xa19b93,-20|-33|0xeddfa1,43|15|0xd2b054,30|-24|0x3a291c"
 	challengeBotton_col = "0xf3b25e"  --挑战按钮主颜色
 	challengeBotton_pos = "-61|-20|0x963b2d,60|31|0x973c2e,15|7|0xf3b25e,-22|13|0xf3b25e,-12|6|0x443829,21|8|0x302a23,-26|-6|0x3d3327"  --挑战按钮周边颜色
+	yuhun_col = "0xf8f3e0" --御魂按钮主颜色
+	yuhun_pos = "32|0|0x2a2016,28|-24|0x2e31ac,26|24|0x2627cb,22|5|0x281f16,9|-2|0xf5f0de,35|22|0x1f26ba" --御魂按钮周边颜色
+	dashe_col = "0x4e5947" --八歧大蛇图标主颜色
+	dashe_pos = "-202|63|0x666b5c,-35|190|0x5e5365,-233|186|0x85704c,-315|-6|0x500b0b,-230|254|0x6c4c93,31|238|0x6d6863" --八歧大蛇图标周边颜色
+	yuhunzudui_col = "0xc3a6b7" --御魂组队界面主颜色
+	yuhunzudui_pos = "57|-174|0xd1c7ca,-115|-165|0x6a6e60,144|24|0x6f7365,-123|85|0x867172,-210|-159|0x4a0b0c,196|161|0xf3b25e" --御魂组队界面周边颜色
+	yuhunCreateTeam_col = "0xfdd580" --御魂创建队伍界面主颜色
+	yuhunCreateTeam_pos = "-25|10|0x483f2f,25|29|0xffcb7b,24|32|0x2e2a23,46|15|0xffca7b,-7|17|0xf7d27e,10|19|0xfed07d" --御魂创建队伍界面周边颜色
+	yuhunCreateTeamDetail_col = "0x4759da" --御魂创建队伍明细界面主颜色
+	yuhunCreateTeamDetail_pos = "26|26|0xcbb59c,100|70|0xdf6851,1|14|0xfcfcfd,598|67|0xf3b25e,155|115|0xc23c21,647|56|0xd98530" --御魂创建队伍明细界面周边颜色
 end
 
