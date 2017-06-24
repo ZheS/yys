@@ -69,8 +69,7 @@ function yuhunStart()
 				mSleep(200);
 			end
 		end
-		sysLog("从yuhunStart进入yuhun");
-		yuhun();
+		yuhunStart();
 	elseif tansuoX ~= -1 and tansuoY ~= -1 then
 		tansuoX = math.random(tansuoX-25,tansuoX+25);
 		tansuoY = math.random(tansuoY-28,tansuoY+35);

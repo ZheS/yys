@@ -17,7 +17,7 @@ function tupoStart()
     yinyangliaoX = math.random(147,462);
     yinyangliaoY = math.random(500,662);
   end
-  sysLog("yinyangliaoX = "..yinyangliaoX..", yinyangliaoY = "..yinyangliaoY);
+  sysLog("点击第"..count.."个寮");
   tap(yinyangliaoX,yinyangliaoY);
   mSleep(500);
 	

@@ -24,21 +24,18 @@ function yinyangliaotupo()
 	sysLog("tNow - t1 = "..tNow - t1);
 	sysLog("tNow - t2 = "..tNow - t2);
 	sysLog("tNow - t3 = "..tNow - t3);
-	if (tNow - t1) > 600000 and isBattle == "false" then
+	if (tNow - t1) > 600000 or (countTemp == 1 and isBattle == "true") then
 		count = 1;
 		sysLog("count = 1,从yinyangliaotupo进入yinyangliaotupoStart");
 		yinyangliaotupoStart();
-		yinyangliaotupo();
-	elseif (tNow - t2) > 600000 and isBattle == "false" then
+	elseif (tNow - t2) > 600000 or (countTemp == 2 and isBattle == "true") then
 		count = 2;
 		sysLog("count = 2,从yinyangliaotupo进入yinyangliaotupoStart");
 		yinyangliaotupoStart();
-		yinyangliaotupo();
-	elseif (tNow - t3) > 600000 and isBattle == "false" then
+	elseif (tNow - t3) > 600000 or (countTemp == 3 and isBattle == "true") then
 		count = 3;
 		sysLog("count = 3,从yinyangliaotupo进入yinyangliaotupoStart");
 		yinyangliaotupoStart();
-		yinyangliaotupo();
 	else
 		if mainInput == "0" then
 			sysLog("mainInput == 0（阴阳寮突破+魂10），从yinyangliaotupo进入yuhunStart");

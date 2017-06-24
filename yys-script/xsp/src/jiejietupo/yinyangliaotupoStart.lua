@@ -87,14 +87,6 @@ function yinyangliaotupoStart()
 		sysLog("点击“阴阳寮突破”按钮进入");
 		tap(yinyangliaotupoX,yinyangliaotupoY);
 		yinyangliaotupoStart();
-	elseif yinyangliaotupoPageX ~= -1 and yinyangliaotupoPageY ~= -1 then
-		if count ~= 0 then
-			sysLog("count ="..count..",进入tupoStart");
-			tupoStart();
-		else 
-		end
-		sysLog("检测到在阴阳寮突破界面，无事可做，进入yinyangliaotupo");
-		yinyangliaotupo();
 	elseif attackEnableX ~= -1 and attackEnableY ~= -1 then
 		if attackFlag == 1 then
 			mSleep(200);
@@ -125,6 +117,14 @@ function yinyangliaotupoStart()
 		sysLog("设置addTime");
 		addTime();
     tap(math.random(143,370), math.random(103,671));
+	elseif yinyangliaotupoPageX ~= -1 and yinyangliaotupoPageY ~= -1 then
+		if count ~= 0 then
+			sysLog("count ="..count..",进入tupoStart");
+			tupoStart();
+		else 
+		end
+		sysLog("检测到在阴阳寮突破界面，无事可做，进入yinyangliaotupo");
+		yinyangliaotupo();
 	elseif cancelInviteX ~= -1 and cancelInviteY ~= -1 then
     cancelInviteX = math.random(462,624);
 		cancelInviteY = math.random(430,470);
