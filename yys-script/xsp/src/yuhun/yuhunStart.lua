@@ -4,6 +4,15 @@ require "util"
 require "init"
 
 function yuhunStart()
+	battle();
+	
+	if isBattle == "true" then
+		sysLog("等待战斗结束");
+		battle();
+		yuhunStart();
+	end
+	
+	sysLog("战斗结束，继续yuhunStart");
 	
 	local confirmInviteTab = {confirmInvite_col, confirmInvite_pos, 95, 373, 186, 990, 575};
   confirmInviteX, confirmInviteY = myFindColor(confirmInviteTab);
@@ -34,88 +43,86 @@ function yuhunStart()
   --深褐色关闭按钮
 	
   if confirmInviteX ~= -1 and confirmInviteY ~= -1 then
-		sysLog("confirmInviteX-old="..confirmInviteX..", confirmInviteY-old="..confirmInviteY);
+		sysLog("继续邀请成员组队御魂10");
 		confirmInviteX = math.random(707,872);
 		confirmInviteY = math.random(427,471);
     tap(confirmInviteX,confirmInviteY);
-		sysLog("confirmInviteX="..confirmInviteX..", confirmInviteY="..confirmInviteY);
     mSleep(200);
-		yuhun();
+		yuhunStart();
 	elseif fangzhuYesX ~= -1 and fangzhuYesY ~= -1 then
-		sysLog("playerAccountInput="..playerAccountInput);
-		sysLog("fangzhuYesX-old="..fangzhuYesX..", fangzhuYesY-old="..fangzhuYesY);
+		sysLog("有成员进入组队");
 		if playerAccountInput == "0" then
 			fangzhuYesX = math.random(1005,1168);
 			fangzhuYesY = math.random(604,646);
+			sysLog("2人已满，开始战斗");
 			tap(fangzhuYesX,fangzhuYesY);
-			sysLog("fangzhuYesX="..fangzhuYesX..", fangzhuYesY="..fangzhuYesY);
-			mSleep(200);
 		elseif playerAccountInput == "1" then
 			local inviteJoinTeamTab = {inviteJoinTeam_col, inviteJoinTeam_pos, 95, 1001, 410, 1173, 567};
 			inviteJoinTeamX, inviteJoinTeamY = myFindColor(inviteJoinTeamTab);
-			sysLog("inviteJoinTeamX="..inviteJoinTeamX..", inviteJoinTeamY="..inviteJoinTeamY);
 			if inviteJoinTeamX ~= -1 and inviteJoinTeamY ~= -1 then
-				yuhun();
+				sysLog("3人未满，继续等待（yuhunStart）");
+				yuhunStart();
 			else
 				fangzhuYesX = math.random(1005,1168);
 				fangzhuYesY = math.random(604,646);
+				sysLog("3人已满，开始战斗");
 				tap(fangzhuYesX,fangzhuYesY);
-				sysLog("fangzhuYesX="..fangzhuYesX..", fangzhuYesY="..fangzhuYesY);
 				mSleep(200);
 			end
 		end
+		sysLog("从yuhunStart进入yuhun");
 		yuhun();
 	elseif tansuoX ~= -1 and tansuoY ~= -1 then
-		sysLog("tansuoX-old="..tansuoX..", tansuoY-old="..tansuoY);
 		tansuoX = math.random(tansuoX-25,tansuoX+25);
 		tansuoY = math.random(tansuoY-28,tansuoY+35);
 		tap(tansuoX,tansuoY);
-		sysLog("tansuoX="..tansuoX..", tansuoY="..tansuoY);
-    yuhun();
+		sysLog("看到探索灯笼，点击进入");
+		mSleep(200);
+    yuhunStart();
 	elseif yuhunX ~= -1 and yuhunY ~= -1 then
-		sysLog("yuhunX-old="..yuhunX..", yuhunY-old="..yuhunY);
 		yuhunX = math.random(179,243);
 		yuhunY = math.random(669,723);
 		tap(yuhunX,yuhunY);
-		sysLog("yuhunX="..tansuoX..", yuhunY="..yuhunY);
-    yuhun();
+		sysLog("看到御魂图标，点击进入");
+		mSleep(200);
+    yuhunStart();
 	elseif dasheX ~= -1 and dasheY ~= -1 then
-		sysLog("dasheX-old="..dasheX..", dasheY-old="..dasheY);
 		dasheX = math.random(160,638);
 		dasheY = math.random(298,503);
 		tap(dasheX,dasheY);
-		sysLog("dasheX="..dasheX..", dasheY="..dasheY);
-    yuhun();
+		sysLog("看到御魂界面的八岐大蛇图标，点击进入");
+		mSleep(200);
+    yuhunStart();
 	elseif yuhunzuduiX ~= -1 and yuhunzuduiY ~= -1 then
-		sysLog("yuhunzuduiX-old="..yuhunzuduiX..", yuhunzuduiY-old="..yuhunzuduiY);
 		yuhunzuduiX = math.random(616,732);
 		yuhunzuduiY = math.random(496,539);
 		tap(yuhunzuduiX,yuhunzuduiY);
-		sysLog("yuhunzuduiX="..yuhunzuduiX..", yuhunzuduiY="..yuhunzuduiY);
-    yuhun();
+		sysLog("看到御魂组队界面的八岐大蛇图标，点击“组队”进入");
+		mSleep(200);
+    yuhunStart();
 	elseif yuhunCreateTeamX ~= -1 and yuhunCreateTeamY ~= -1 then
-		sysLog("yuhunCreateTeamX-old="..yuhunCreateTeamX..", yuhunCreateTeamY-old="..yuhunCreateTeamY);
 		yuhunCreateTeamX = math.random(1008,1171);
 		yuhunCreateTeamY = math.random(633,676);
 		tap(yuhunCreateTeamX,yuhunCreateTeamY);
-		sysLog("yuhunCreateTeamX="..yuhunCreateTeamX..", yuhunCreateTeamY="..yuhunCreateTeamY);
-    yuhun();
+		sysLog("看到组队界面的“创建队伍”按钮，点击进入");
+		mSleep(200);
+		yuhunStart();
 	elseif yuhunCreateTeamDetailX ~= -1 and yuhunCreateTeamDetailY ~= -1 then
-		sysLog("yuhunCreateTeamDetailX-old="..yuhunCreateTeamDetailX..", yuhunCreateTeamDetailY-old="..yuhunCreateTeamDetailY);
 		yuhunCreateTeamDetailX = math.random(856,971);
 		yuhunCreateTeamDetailY = math.random(594,637);
 		tap(yuhunCreateTeamDetailX,yuhunCreateTeamDetailY);
-		sysLog("yuhunCreateTeamDetailX="..yuhunCreateTeamDetailX..", yuhunCreateTeamDetailY="..yuhunCreateTeamDetailY);
-		yuhun();
+		sysLog("点击“创建队伍”按钮后，选择副本、难度、等级");
+		mSleep(200);
+		yuhunStart();
 	elseif windowCloseX ~= -1 and windowCloseY ~= -1 then
-		sysLog("windowCloseX-old="..windowCloseX..", windowCloseY-old="..windowCloseY);
 		windowCloseX = math.random(windowCloseX-23,windowCloseX+23);
 		windowCloseY = math.random(windowCloseY-23,windowCloseY+23);
 		tap(windowCloseX,windowCloseY);
-		sysLog("windowCloseX="..windowCloseX..", windowCloseY="..windowCloseY);
-		yuhun();
+		sysLog("没什么可做的，关闭窗口");
+		mSleep(200);
+		yuhunStart();
   else
-    yuhun();
+    yuhunStart();
   end
 end
 

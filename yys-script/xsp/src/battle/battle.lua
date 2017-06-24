@@ -7,6 +7,8 @@ local battleLoseTab = {battleLose_col, battleLose_pos, 95, 0, 0, width, height};
 local battleWinDamoTab = {battleWinDamo_col, battleWinDamo_pos, 95, 0, 0, width, height};
 local battleWinGiftTab = {battleWinGift_col, battleWinGift_pos, 95, 0, 0, width, height};
   
+isBattle = "false";
+	
 function battle()
   readyX, readyY = myFindColor(readyTab);
   --待准备界面的鼓
@@ -47,6 +49,7 @@ function ready()
 		mSleep(500);
 		readyX, readyY = myFindColor(readyTab);
 	end
+	sysLog("isBattle="..isBattle);
 end
 
 function battleWin()
@@ -60,6 +63,7 @@ function battleWin()
 		tap(battleWinX,battleWinY);
 		battleWinX, battleWinY = myFindColor(battleWinTab);
 	end
+	sysLog("isBattle="..isBattle);
 end
 
 function battleLose()
@@ -74,6 +78,7 @@ function battleLose()
 		battleLoseX, battleLoseY = myFindColor(battleLoseTab);
 	end
 	isBattle = "false";
+	sysLog("isBattle="..isBattle);
 end
 
 function battleWinDamo()
@@ -87,6 +92,7 @@ function battleWinDamo()
 		tap(battleWinDamoX,	battleWinDamoY);
 		battleWinDamoX, battleWinDamoY = myFindColor(battleWinDamoTab);
 	end
+	sysLog("isBattle="..isBattle);
 end
 
 function battleWinGift()
@@ -101,6 +107,7 @@ function battleWinGift()
     battleWinGiftX, battleWinGiftY = myFindColor(battleWinGiftTab);
 	end
 	isBattle = "false";
+	sysLog("isBattle="..isBattle);
 end
 
 function manualToAuto()

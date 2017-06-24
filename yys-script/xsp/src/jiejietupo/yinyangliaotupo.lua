@@ -79,9 +79,11 @@ function yinyangliaotupo()
 			yinyangliaotupo();
 		else
 			if mainInput == "0" then
+				sysLog("mainInput == 0（阴阳寮突破+魂10），从yinyangliaotupo进入yuhunStart");
 				yuhunStart();
 			elseif mainInput == "1" then
 				rewardSelect();
+				sysLog("mainInput == 1（突破），从yinyangliaotupo进入yinyangliaotupo");
 				yinyangliaotupo();
 			else
 			end
