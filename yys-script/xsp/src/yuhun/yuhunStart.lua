@@ -5,8 +5,8 @@ require "init"
 
 function yuhunStart()
 	
-	local inviteTab = {invite_col, invite_pos, 95, 373, 186, 990, 575};
-  inviteX, inviteY = myFindColor(inviteTab);
+	local confirmInviteTab = {confirmInvite_col, confirmInvite_pos, 95, 373, 186, 990, 575};
+  confirmInviteX, confirmInviteY = myFindColor(confirmInviteTab);
   --继续邀请
 	local fangzhuYesTab = {fangzhuYes_col, fangzhuYes_pos, 95, 0, 0, width, height};
   fangzhuYesX, fangzhuYesY = myFindColor(fangzhuYesTab);
@@ -33,12 +33,12 @@ function yuhunStart()
   windowCloseX, windowCloseY = myFindColor(windowCloseTab);
   --深褐色关闭按钮
 	
-  if inviteX ~= -1 and inviteY ~= -1 then
-		sysLog("inviteX-old="..inviteX..", inviteY-old="..inviteY);
-		inviteX = math.random(707,872);
-		inviteY = math.random(427,471);
-    tap(inviteX,inviteY);
-		sysLog("inviteX="..inviteX..", inviteY="..inviteY);
+  if confirmInviteX ~= -1 and confirmInviteY ~= -1 then
+		sysLog("confirmInviteX-old="..confirmInviteX..", confirmInviteY-old="..confirmInviteY);
+		confirmInviteX = math.random(707,872);
+		confirmInviteY = math.random(427,471);
+    tap(confirmInviteX,confirmInviteY);
+		sysLog("confirmInviteX="..confirmInviteX..", confirmInviteY="..confirmInviteY);
     mSleep(200);
 		yuhun();
 	elseif fangzhuYesX ~= -1 and fangzhuYesY ~= -1 then

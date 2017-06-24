@@ -31,9 +31,6 @@ function yinyangliaotupo()
   local battleWinGiftTab = {battleWinGift_col, battleWinGift_pos, 95, 0, 0, width, height};
   battleWinGiftX, battleWinGiftY = myFindColor(battleWinGiftTab);
   --打开红达摩后的奖励
-	local rejectJoinTeamTab = {rejectJoinTeam_col, rejectJoinTeam_pos, 95, 0, 0, width, height};
-  rejectJoinTeamX, rejectJoinTeamY = myFindColor(rejectJoinTeamTab);
-  --邀请组队界面中的取消图标
 	
 	if readyX ~= -1 and readyY ~= -1 then
 		addTime();
@@ -55,23 +52,16 @@ function yinyangliaotupo()
   elseif battleWinGiftX ~= -1 and battleWinGiftY ~= -1 then
     battleWinGift();
 		yinyangliaotupo();
-	elseif rejectJoinTeamX ~= -1 and rejectJoinTeamY ~= -1 then
-    sysLog("rejectJoinTeamX-old="..rejectJoinTeamX..", rejectJoinTeamY-old="..rejectJoinTeamY);
-		rejectJoinTeamX = math.random(462,624);
-		rejectJoinTeamY = math.random(430,470);
-		tap(rejectJoinTeamX,rejectJoinTeamY);
-		sysLog("rejectJoinTeamX="..rejectJoinTeamX..", rejectJoinTeamY="..rejectJoinTeamY);
-		yinyangliaotupo();
 	else
 		mSleep(0);
-		--sysLog("count = "..count);
-		--sysLog("t1 = "..t1);
-		--sysLog("t2 = "..t2);
-		--sysLog("t3 = "..t3);
+		sysLog("count = "..count);
+		sysLog("t1 = "..t1);
+		sysLog("t2 = "..t2);
+		sysLog("t3 = "..t3);
 		local tNow = mTime();
-		--sysLog("tNow - t1 = "..tNow - t1);
-		--sysLog("tNow - t2 = "..tNow - t2);
-		--sysLog("tNow - t3 = "..tNow - t3);
+		sysLog("tNow - t1 = "..tNow - t1);
+		sysLog("tNow - t2 = "..tNow - t2);
+		sysLog("tNow - t3 = "..tNow - t3);
 		if (tNow - t1) > 600000 then
 			count = 1;
 			--sysLog("count = "..count);

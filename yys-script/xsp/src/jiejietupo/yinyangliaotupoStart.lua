@@ -25,6 +25,9 @@ function yinyangliaotupoStart()
 	local attackDisableTab = {attackDisable_col, attackDisable_pos, 95, 0, 0, width, height};
   attackDisableX, attackDisableY = myFindColor(attackDisableTab);
   --攻击按钮不可用
+	local cancelInviteTab = {cancelInvite_col, cancelInvite_pos, 95, 0, 0, width, height};
+  cancelInviteX, cancelInviteY = myFindColor(cancelInviteTab);
+  --邀请组队界面中的取消图标
 	
   if tansuoX ~= -1 and tansuoY ~= -1 then
 		sysLog("tansuoX-old="..tansuoX..", tansuoY-old="..tansuoY);
@@ -79,6 +82,13 @@ function yinyangliaotupoStart()
 		addTime();
 		addCount();
     tap(math.random(143,370), math.random(103,671));
+	elseif cancelInviteX ~= -1 and cancelInviteY ~= -1 then
+    sysLog("cancelInviteX-old="..cancelInviteX..", cancelInviteY-old="..cancelInviteY);
+		cancelInviteX = math.random(462,624);
+		cancelInviteY = math.random(430,470);
+		tap(cancelInviteX,cancelInviteY);
+		sysLog("cancelInviteX="..cancelInviteX..", cancelInviteY="..cancelInviteY);
+		yinyangliaotupo();
 	else
 		yinyangliaotupo();
   end
