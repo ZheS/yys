@@ -6,10 +6,9 @@ require "battle/battle"
 require "yuhun/yuhunStart"
 
 function yuhun()
-	sysLog(mainInput);
 	battle();
 	if mainInput == "0" then
-		yinyangliaotupo();
+		yinyangliaotupoStart();
 	elseif mainInput == "2" then
 		yuhunStart()
 	else
