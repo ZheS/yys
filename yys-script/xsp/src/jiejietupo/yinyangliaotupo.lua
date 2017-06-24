@@ -43,7 +43,7 @@ function yinyangliaotupo()
 		elseif mainInput == "1" then
 			rewardSelect();
 			sysLog("mainInput == 1（突破），从yinyangliaotupo进入yinyangliaotupo");
-			yinyangliaotupo();
+			yinyangliaotupoStart();
 		else
 		end
 	end
