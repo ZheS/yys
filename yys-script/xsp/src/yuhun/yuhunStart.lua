@@ -8,7 +8,6 @@ function yuhunStart()
 	
 	if isBattle == "true" then
 		sysLog("等待战斗结束");
-		battle();
 		yuhunStart();
 	end
 	

@@ -5,7 +5,47 @@ require "init"
 require "jiejietupo.tupoStart"
 
 function yinyangliaotupoStart()
-	mSleep(0);
+	local readyTab = {ready_col, ready_pos, 95, 0, 0, width, height};
+  readyX, readyY = myFindColor(readyTab);
+  --待准备界面的鼓
+	local battleWinTab = {battleWin_col, battleWin_pos, 95, 0, 0, width, height};
+  battleWinX, battleWinY = myFindColor(battleWinTab);
+  --战斗胜利
+  local battleLoseTab = {battleLose_col, battleLose_pos, 95, 0, 0, width, height};
+  battleLoseX, battleLoseY = myFindColor(battleLoseTab);
+  --战斗失败
+  local battleWinDamoTab = {battleWinDamo_col, battleWinDamo_pos, 95, 0, 0, width, height};
+  battleWinDamoX, battleWinDamoY = myFindColor(battleWinDamoTab);
+  --战斗结束后的红达摩
+  local battleWinGiftTab = {battleWinGift_col, battleWinGift_pos, 95, 0, 0, width, height};
+  battleWinGiftX, battleWinGiftY = myFindColor(battleWinGiftTab);
+  --打开红达摩后的奖励
+	
+	if readyX ~= -1 and readyY ~= -1 then
+		addTime();
+		ready();
+	elseif battleWinX ~= -1 and battleWinY ~= -1 then
+    battleWin();
+		attackFlag = 1;
+		resetCount();
+  elseif battleLoseX ~= -1 and battleLoseY ~= -1 then
+    battleLose();
+		attackFlag = 1;
+		resetTime();
+		resetCount();
+  elseif battleWinDamoX ~= -1 and battleWinDamoY ~= -1 then
+    battleWinDamo();
+  elseif battleWinGiftX ~= -1 and battleWinGiftY ~= -1 then
+    battleWinGift();
+	else
+	end
+	
+	if isBattle == "true" then
+		sysLog("等待战斗结束");
+		yinyangliaotupoStart();
+	end
+	
+	sysLog("战斗结束，继续yinyangliaotupoStart");
 	
 	local tansuoTab = {tansuo_col, tansuo_pos, 95, 0, 0, width, height};
   tansuoX, tansuoY = myFindColor(tansuoTab);
@@ -30,66 +70,68 @@ function yinyangliaotupoStart()
   --邀请组队界面中的取消图标
 	
   if tansuoX ~= -1 and tansuoY ~= -1 then
-		sysLog("tansuoX-old="..tansuoX..", tansuoY-old="..tansuoY);
 		tansuoX = math.random(tansuoX-25,tansuoX+25);
 		tansuoY = math.random(tansuoY-28,tansuoY+35);
-		sysLog("tansuoX="..tansuoX..", tansuoY="..tansuoY);
+		sysLog("看到探索灯笼，点击进入");
     tap(tansuoX,tansuoY);
 		yinyangliaotupoStart();
 	elseif jiejietupoX ~= -1 and jiejietupoY ~= -1 then
-		sysLog("jiejietupoX-old="..jiejietupoX..", jiejietupoY-old="..jiejietupoY);
 		jiejietupoX = math.random(403,468);
 		jiejietupoY = math.random(669,724);
-		sysLog("jiejietupoX="..jiejietupoX..", jiejietupoY="..jiejietupoY);
+		sysLog("看到结界突破图标，点击进入");
     tap(jiejietupoX,jiejietupoY);
 		yinyangliaotupoStart();
   elseif yinyangliaotupoX ~= -1 and yinyangliaotupoY ~= -1 then
-		sysLog("yinyangliaotupoX-old="..yinyangliaotupoX..", yinyangliaotupoY-old="..yinyangliaotupoY);
 		yinyangliaotupoX = math.random(1258,1308);
 		yinyangliaotupoY = math.random(306,404);
-		sysLog("yinyangliaotupoX="..yinyangliaotupoX..", yinyangliaotupoY="..yinyangliaotupoY);
-    tap(yinyangliaotupoX,yinyangliaotupoY);
+		sysLog("点击“阴阳寮突破”按钮进入");
+		tap(yinyangliaotupoX,yinyangliaotupoY);
 		yinyangliaotupoStart();
 	elseif yinyangliaotupoPageX ~= -1 and yinyangliaotupoPageY ~= -1 then
 		if count ~= 0 then
+			sysLog("count ="..count..",进入tupoStart");
 			tupoStart();
 		else 
 		end
-		yinyangliaotupoStart();
+		sysLog("检测到在阴阳寮突破界面，无事可做，进入yinyangliaotupo");
+		yinyangliaotupo();
 	elseif attackEnableX ~= -1 and attackEnableY ~= -1 then
 		if attackFlag == 1 then
 			mSleep(200);
-			sysLog("attackEnableX-old = "..attackEnableX..", attackEnableY-old = "..attackEnableY);
 			attackEnableX = math.random(attackEnableX-60,attackEnableX+50);
 			attackEnableY	= math.random(attackEnableY-15,attackEnableY+20);
 			tap(attackEnableX, attackEnableY);
-			sysLog("attackEnableX = "..attackEnableX..", attackEnableY = "..attackEnableY);
+			sysLog("点击攻击按钮，attackFlag = 1");
+			sysLog("设置attackFlag = 2");
 			attackFlag = 2;
+			sysLog("设置countTemp="..count);
 			countTemp = count;
 			mSleep(1000);
 		elseif attackFlag == 2 then
+			sysLog("检测到攻击按钮无效");
 			tap(math.random(143,370), math.random(103,671)); -- 空白处随便点一下
 			sysLog("空白处随便点一下");
 			mSleep(1000);
 			tap(math.random(1207,1258), math.random(52,92)); -- 关闭结界突破界面
 			sysLog("关闭结界突破界面");
+			sysLog("attackFlag=1");
 			attackFlag = 1;
+			sysLog("countTemp=0");
 			countTemp = 0;
 		end
   elseif attackDisableX ~= -1 and attackDisableY ~= -1 then
-		sysLog("attackDisableX-old = "..attackDisableX..", attackDisableY-old = "..attackDisableY);
+		sysLog("检测到在CD中，设置countTemp="..count);
     countTemp = count;
+		sysLog("设置addTime");
 		addTime();
-		addCount();
     tap(math.random(143,370), math.random(103,671));
 	elseif cancelInviteX ~= -1 and cancelInviteY ~= -1 then
-    sysLog("cancelInviteX-old="..cancelInviteX..", cancelInviteY-old="..cancelInviteY);
-		cancelInviteX = math.random(462,624);
+    cancelInviteX = math.random(462,624);
 		cancelInviteY = math.random(430,470);
 		tap(cancelInviteX,cancelInviteY);
-		sysLog("cancelInviteX="..cancelInviteX..", cancelInviteY="..cancelInviteY);
+		sysLog("取消邀请，进入yinyangliaotupo");
 		yinyangliaotupo();
 	else
-		yinyangliaotupo();
+		yinyangliaotupoStart();
   end
 end
