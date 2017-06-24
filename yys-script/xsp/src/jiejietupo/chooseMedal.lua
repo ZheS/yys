@@ -20,8 +20,6 @@ function chooseMedal0()
 		moveYinyangliao();
 		mSleep(2000);
 		chooseMedal0();
-		--setTime();
-		--addCount();
 	end
 end
 
@@ -146,11 +144,10 @@ function chooseMedal5()
 end
 
 function medal0yinyangliao()
-	sysLog("medal0yinyangliaoX-old = "..medal0yinyangliaoX..", medal0yinyangliaoY-old = "..medal0yinyangliaoY);
 	medal0yinyangliaoX = math.random(medal0yinyangliaoX-100,medal0yinyangliaoX+200);
 	medal0yinyangliaoY = math.random(medal0yinyangliaoY-60,medal0yinyangliaoY+20);
 	tap(medal0yinyangliaoX, medal0yinyangliaoY);
-	sysLog("medal0yinyangliaoX = "..medal0yinyangliaoX..", medal0yinyangliaoY = "..medal0yinyangliaoY);
+	yinyangliaotupoStart();
 end
 
 function medal1yinyangliao()
@@ -158,7 +155,7 @@ function medal1yinyangliao()
 	medal1yinyangliaoX = math.random(medal1yinyangliaoX-100,medal1yinyangliaoX+200);
 	medal1yinyangliaoY = math.random(medal1yinyangliaoY-60,medal1yinyangliaoY+20);
 	tap(medal1yinyangliaoX, medal1yinyangliaoY);
-	sysLog("medal1yinyangliaoX = "..medal1yinyangliaoX..", medal1yinyangliaoY = "..medal1yinyangliaoY);
+	yinyangliaotupoStart();
 end
 
 function medal2yinyangliao()
@@ -166,7 +163,7 @@ function medal2yinyangliao()
 	medal2yinyangliaoX = math.random(medal2yinyangliaoX-100,medal2yinyangliaoX+200);
 	medal2yinyangliaoY = math.random(medal2yinyangliaoY-60,medal2yinyangliaoY+20);
 	tap(medal2yinyangliaoX, medal2yinyangliaoY);
-	sysLog("medal2yinyangliaoX = "..medal2yinyangliaoX..", medal2yinyangliaoY = "..medal2yinyangliaoY);
+	yinyangliaotupoStart();
 end
 
 function medal3yinyangliao()
@@ -174,7 +171,7 @@ function medal3yinyangliao()
 	medal3yinyangliaoX = math.random(medal3yinyangliaoX-100,medal3yinyangliaoX+200);
 	medal3yinyangliaoY = math.random(medal3yinyangliaoY-60,medal3yinyangliaoY+20);
 	tap(medal3yinyangliaoX, medal3yinyangliaoY);
-	sysLog("medal3yinyangliaoX = "..medal3yinyangliaoX..", medal3yinyangliaoY = "..medal3yinyangliaoY);
+	yinyangliaotupoStart();
 end
 
 function medal4yinyangliao()
@@ -182,7 +179,7 @@ function medal4yinyangliao()
 	medal4yinyangliaoX = math.random(medal4yinyangliaoX-100,medal4yinyangliaoX+200);
 	medal4yinyangliaoY = math.random(medal4yinyangliaoY-60,medal4yinyangliaoY+20);
 	tap(medal4yinyangliaoX, medal4yinyangliaoY);
-	sysLog("medal4yinyangliaoX = "..medal4yinyangliaoX..", medal4yinyangliaoY = "..medal4yinyangliaoY);
+	yinyangliaotupoStart();
 end
 
 function medal5yinyangliao()
@@ -190,5 +187,5 @@ function medal5yinyangliao()
 	medal5yinyangliaoX = math.random(medal5yinyangliaoX-100,medal5yinyangliaoX+200);
 	medal5yinyangliaoY = math.random(medal5yinyangliaoY-60,medal5yinyangliaoY+20);
 	tap(medal5yinyangliaoX, medal5yinyangliaoY);
-	sysLog("medal5yinyangliaoX = "..medal5yinyangliaoX..", medal5yinyangliaoY = "..medal5yinyangliaoY);
+	yinyangliaotupoStart();
 end

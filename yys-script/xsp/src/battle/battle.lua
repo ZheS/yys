@@ -1,20 +1,23 @@
 require "util"
 require "init"
 
+local readyTab = {ready_col, ready_pos, 95, 0, 0, width, height};
+local battleWinTab = {battleWin_col, battleWin_pos, 95, 0, 0, width, height};
+local battleLoseTab = {battleLose_col, battleLose_pos, 95, 0, 0, width, height};
+local battleWinDamoTab = {battleWinDamo_col, battleWinDamo_pos, 95, 0, 0, width, height};
+local battleWinGiftTab = {battleWinGift_col, battleWinGift_pos, 95, 0, 0, width, height};
+  
+isBattle = "false";
+	
 function battle()
-  local readyTab = {ready_col, ready_pos, 95, 0, 0, width, height};
   readyX, readyY = myFindColor(readyTab);
   --待准备界面的鼓
-	local battleWinTab = {battleWin_col, battleWin_pos, 95, 0, 0, width, height};
   battleWinX, battleWinY = myFindColor(battleWinTab);
   --战斗胜利
-  local battleLoseTab = {battleLose_col, battleLose_pos, 95, 0, 0, width, height};
   battleLoseX, battleLoseY = myFindColor(battleLoseTab);
   --战斗失败
-  local battleWinDamoTab = {battleWinDamo_col, battleWinDamo_pos, 95, 0, 0, width, height};
   battleWinDamoX, battleWinDamoY = myFindColor(battleWinDamoTab);
   --战斗结束后的红达摩
-  local battleWinGiftTab = {battleWinGift_col, battleWinGift_pos, 95, 0, 0, width, height};
   battleWinGiftX, battleWinGiftY = myFindColor(battleWinGiftTab);
   --打开红达摩后的奖励
 	
@@ -33,46 +36,79 @@ function battle()
 end
 
 function ready()
-	sysLog("readyX-old="..readyX..", readyY-old="..readyY);
+	isBattle = "true";
 	readyX = math.random(1136,1291);
 	readyY = math.random(525,624);
 	tap(readyX,readyY);
 	mSleep(500);
-	sysLog("readyX="..readyX..", readyY="..readyY);
+	readyX, readyY = myFindColor(readyTab);
+	while readyX ~= -1 and readyY ~= -1 do
+		readyX = math.random(1136,1291);
+		readyY = math.random(525,624);
+		tap(readyX,readyY);
+		mSleep(500);
+		readyX, readyY = myFindColor(readyTab);
+	end
+	sysLog("isBattle="..isBattle);
 end
 
 function battleWin()
-	sysLog("battleWinX-old="..battleWinX..", battleWinY-old="..battleWinY);
 	battleWinX = math.random(1123,1321);
 	battleWinY = math.random(454,737);
 	tap(battleWinX,battleWinY);
-	sysLog("battleWinX="..battleWinX..", battleWinY="..battleWinY);
+	battleWinX, battleWinY = myFindColor(battleWinTab);
+	while battleWinX ~= -1 and battleWinY ~= -1 do
+		battleWinX = math.random(1123,1321);
+		battleWinY = math.random(454,737);
+		tap(battleWinX,battleWinY);
+		battleWinX, battleWinY = myFindColor(battleWinTab);
+	end
+	sysLog("isBattle="..isBattle);
 end
 
 function battleLose()
-	sysLog("battleLoseX-old="..battleLoseX..", battleLoseY-old="..battleLoseY);
 	battleLoseX = math.random(1123,1321);
 	battleLoseY = math.random(454,737);
 	tap(battleLoseX,battleLoseY);
-	sysLog("battleLoseX="..battleLoseX..", battleLoseY="..battleLoseY);
+	battleLoseX, battleLoseY = myFindColor(battleLoseTab);
+	while battleLoseX ~= -1 and battleLoseY ~= -1 do
+		battleLoseX = math.random(1123,1321);
+		battleLoseY = math.random(454,737);
+		tap(battleLoseX,battleLoseY);
+		battleLoseX, battleLoseY = myFindColor(battleLoseTab);
+	end
+	isBattle = "false";
+	sysLog("isBattle="..isBattle);
 end
 
 function battleWinDamo()
-	sysLog("battleWinDamoX-old="..battleWinDamoX..", battleWinDamoY-old="..battleWinDamoY);
 	battleWinDamoX = math.random(1123,1321);
 	battleWinDamoY = math.random(454,737);
 	tap(battleWinDamoX,battleWinDamoY);
-	sysLog("battleWinDamoX="..battleWinDamoX..", battleWinDamoY="..battleWinDamoY);
+	battleWinDamoX, battleWinDamoY = myFindColor(battleWinDamoTab);
+  while battleWinDamoX ~= -1 and battleWinDamoY ~= -1 do
+		battleWinDamoX = math.random(1123,1321);
+		battleWinDamoY = math.random(454,737);
+		tap(battleWinDamoX,	battleWinDamoY);
+		battleWinDamoX, battleWinDamoY = myFindColor(battleWinDamoTab);
+	end
+	sysLog("isBattle="..isBattle);
 end
 
 function battleWinGift()
-	sysLog("battleWinGiftX-old="..battleWinGiftX..", battleWinGiftY-old="..battleWinGiftY);
 	battleWinGiftX = math.random(1123,1321);
 	battleWinGiftY = math.random(454,737);
-	tap(battleWinGiftX,battleWinGiftY);
-	sysLog("battleWinGiftX="..battleWinGiftX..", battleWinGiftY="..battleWinGiftY);
+	tap(battleWinGiftX, battleWinGiftY);
+	battleWinGiftX, battleWinGiftY = myFindColor(battleWinGiftTab);
+  while battleWinGiftX ~= -1 and battleWinGiftY ~= -1 do
+		battleWinGiftX = math.random(1123,1321);
+		battleWinGiftY = math.random(454,737);
+		tap(battleWinGiftX,	battleWinGiftY);
+    battleWinGiftX, battleWinGiftY = myFindColor(battleWinGiftTab);
+	end
+	isBattle = "false";
+	sysLog("isBattle="..isBattle);
 end
-
 
 function manualToAuto()
   local manualButtonTab = {manualButton_col, manualButton_pos, 95, 0, 0, width, height};
