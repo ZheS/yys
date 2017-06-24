@@ -16,7 +16,7 @@ function confirmInvite()
     mSleep(200);
 		yuhun();
   else
-    confirmInvite();
+    yuhun();
   end
 end
 

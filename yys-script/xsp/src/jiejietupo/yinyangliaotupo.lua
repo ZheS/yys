@@ -38,7 +38,7 @@ function yinyangliaotupo()
 		yinyangliaotupoStart();
 	else
 		if mainInput == "0" then
-			sysLog("mainInput == 0（阴阳寮突破+魂10），从yinyangliaotupo进入confirmInvite");
+			sysLog("mainInput == 0（阴阳寮突破+魂10），从yinyangliaotupo进入yuhun");
 			confirmInvite();
 		elseif mainInput == "1" then
 			rewardSelect();
