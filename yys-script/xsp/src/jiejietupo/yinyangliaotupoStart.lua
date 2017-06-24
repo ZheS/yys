@@ -116,6 +116,8 @@ function yinyangliaotupoStart()
     countTemp = count;
 		sysLog("设置addTime");
 		addTime();
+		sysLog("设置resetCount");
+		resetCount();
     tap(math.random(143,370), math.random(103,671));
 	elseif yinyangliaotupoPageX ~= -1 and yinyangliaotupoPageY ~= -1 then
 		if count ~= 0 then
