@@ -41,6 +41,9 @@ function yuhun()
 	local windowCloseTab = {windowClose_col, windowClose_pos, 95, 0, 0, width, height};
   windowCloseX, windowCloseY = myFindColor(windowCloseTab);
   --深褐色关闭按钮
+	local tilibugouTab = {tilibugou_col, tilibugou_pos, 95, 0, 0, width, height};
+  tilibugouX, tilibugouY = myFindColor(tilibugouTab);
+  --体力不够界面
 	
   if inviteX ~= -1 and inviteY ~= -1 then
 		sysLog("判断是继续御魂，还是阴阳寮突破");
@@ -115,6 +118,18 @@ function yuhun()
 		sysLog("点击“创建队伍”按钮后，选择副本、难度、等级");
 		mSleep(200);
 		yuhun();
+	elseif tilibugouX ~= -1 and tilibugouY ~= -1 then
+		tilibugouX = math.random(957,998);
+		tilibugouY = math.random(183,224);
+		tap(tilibugouX,tilibugouY);
+		sysLog("体力不够");
+		mSleep(200);
+		if mainInput == "0" then
+			mainInput = "1";
+			sysLog("只打阴阳寮突破");
+			yinyangliaotupo();
+		else 
+		end
 	elseif windowCloseX ~= -1 and windowCloseY ~= -1 then
 		windowCloseX = math.random(windowCloseX-23,windowCloseX+23);
 		windowCloseY = math.random(windowCloseY-23,windowCloseY+23);
