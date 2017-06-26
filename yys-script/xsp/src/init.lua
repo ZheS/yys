@@ -100,6 +100,8 @@ yuhunCreateTeam_col = "" --御魂创建队伍界面主颜色
 yuhunCreateTeam_pos = "" --御魂创建队伍界面周边颜色
 yuhunCreateTeamDetail_col = "" --御魂创建队伍明细界面主颜色
 yuhunCreateTeamDetail_pos = "" --御魂创建队伍明细界面周边颜色
+po_col = "" --结界攻破图标主颜色
+po_pos = "" --结界攻破图标周边颜色
 
 
 if width==1334 and height==750 then
@@ -201,5 +203,7 @@ if width==1334 and height==750 then
 	yuhunCreateTeam_pos = "-25|10|0x483f2f,25|29|0xffcb7b,24|32|0x2e2a23,46|15|0xffca7b,-7|17|0xf7d27e,10|19|0xfed07d" --御魂创建队伍界面周边颜色
 	yuhunCreateTeamDetail_col = "0x4759da" --御魂创建队伍明细界面主颜色
 	yuhunCreateTeamDetail_pos = "26|26|0xcbb59c,100|70|0xdf6851,1|14|0xfcfcfd,598|67|0xf3b25e,155|115|0xc23c21,647|56|0xd98530" --御魂创建队伍明细界面周边颜色
+	po_col = "0xcebeab" --结界攻破图标主颜色
+	po_pos = "36|-25|0xb24242,16|19|0x691827,-16|1|0xcfbfac,-7|-4|0x380b0e,20|21|0x6b1928,-10|9|0x53131c,27|16|0xd3c3b3" --结界攻破图标周边颜色
 end
 
