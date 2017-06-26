@@ -129,6 +129,8 @@ function yuhun()
 			sysLog("只打阴阳寮突破");
 			yinyangliaotupo();
 		else 
+			sysLog("结束啦");
+			lua_exit();
 		end
 	elseif windowCloseX ~= -1 and windowCloseY ~= -1 then
 		windowCloseX = math.random(windowCloseX-23,windowCloseX+23);
