@@ -59,7 +59,7 @@ function yinyangliaotupoStart()
 	local yinyangliaotupoPageTab = {yinyangliaotupoPage_col, yinyangliaotupoPage_pos, 95, 0, 0, width, height};
   yinyangliaotupoPageX, yinyangliaotupoPageY = myFindColor(yinyangliaotupoPageTab);
   --阴阳寮突破界面
-	local attackEnableTab = {attackEnable_col, attackEnable_pos, 95, 0, 0, width, height};
+	local attackEnableTab = {attackEnable_col, attackEnable_pos, 92, 0, 0, width, height};
   attackEnableX, attackEnableY = myFindColor(attackEnableTab);
   --攻击按钮可用
 	local attackDisableTab = {attackDisable_col, attackDisable_pos, 95, 0, 0, width, height};

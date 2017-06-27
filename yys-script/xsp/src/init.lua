@@ -177,9 +177,9 @@ if width==1334 and height==750 then
   medal1yinyangliao_pos = "42|0|0xb3a28d,164|0|0xb3a28d,-16|0|0x9f9a92,15|1|0xa8a096,31|-13|0x988975,172|15|0x8a7664,-1|14|0xaba7a1,1|-14|0xbcb7b1,215|-80|0xc6b29b"				--阴阳寮突破1勋章周边颜色
   medal0yinyangliao_col = "0xb3a28d"				--阴阳寮突破0勋章主颜色
   medal0yinyangliao_pos = "163|-1|0xb3a28d,-1|-15|0xa0917d,164|15|0x9d8e79,-15|12|0xb0825f,176|15|0xad7f5e,-16|0|0x9a8b77,177|11|0x8b7865,-18|2|0x815f4f,215|-80|0xc6b29b"				--阴阳寮突破0勋章周边颜色
-  attackEnable_col = "0xf3b25e"				--攻击按钮可用主颜色
-  attackEnable_pos = "-9|16|0x282520,26|4|0x423728,-61|-21|0x94382c,60|34|0xd78330,14|-5|0x2a2621"				--攻击按钮可用周边颜色
-  attackDisable_col = "0xb0a9a1"				--攻击按钮不可用主颜色
+  attackEnable_col = "0xebb263"				--攻击按钮可用主颜色
+  attackEnable_pos = "-13|-7|0x452913,24|4|0x302113,-25|-4|0xf3b35e,-58|-21|0x993e2d,29|13|0xf1b754"				--攻击按钮可用周边颜色
+	attackDisable_col = "0xb0a9a1"				--攻击按钮不可用主颜色
   attackDisable_pos = "-48|0|0xb0a9a1,46|-6|0xb0a9a1,-69|-10|0x353029,70|17|0x423c36,-61|-14|0x675e5c,63|38|0x675e5c,66|-16|0x8b827a,-64|42|0x8c837b,9|47|0x47413f"				--攻击按钮不可用周边颜色
   tansuo_col = "0x21170d"				--探索灯笼按钮主颜色
 	tansuo_pos = "-9|7|0x21170c,-7|9|0xffe890,6|5|0xfff8a0,4|11|0x271c0d,-7|18|0x22190d,7|18|0x241a0d,-1|20|0x251a0e,-1|19|0xfecb92"				--探索灯笼按钮周边颜色

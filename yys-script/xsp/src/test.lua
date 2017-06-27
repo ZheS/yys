@@ -14,7 +14,7 @@ function test()
   ]]
   --tap(795,652);
   --mSleep(500);
-  input = {battleWinGift_col, battleWinGift_pos, 95, 0, 0, width, height};
+  input = {attackEnable_col, attackEnable_pos, 92, 0, 0, width, height};
   
   x, y = myFindColor(input);
   
