@@ -6,6 +6,12 @@ require "init"
 
 function yuling()
 	battle();
+	
+	if isBattle == "true" then
+		sysLog("等待战斗结束");
+		mSleep(10000);
+		yuling();
+	end
   
 	local challengeBottonTab = {challengeBotton_col, challengeBotton_pos, 95, 0, 0, width, height};
   challengeBottonX, challengeBottonY = myFindColor(challengeBottonTab);
