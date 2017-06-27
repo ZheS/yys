@@ -3,6 +3,8 @@ init("0", 1); --以当前应用 Home 键在右边初始化
 require "util"
 require "init"
 
+local poTab = {po_col, po_pos, 95, 0, 0, width, height};
+
 function moveYinyangliao()
 	x1 = math.random(862,1187);
 	y1 = math.random(599,665);
@@ -11,15 +13,33 @@ function moveYinyangliao()
 	move(x1,y1,x2,y2);
 end
 
+function tupoFinishi()
+	sysLog("第"..count.."个寮突破已打完")
+	if count == 1 then
+		yinyangliao1 = "false";
+	elseif count == 2 then
+		yinyangliao2 = "false";
+	elseif count == 3 then
+		yinyangliao3 = "false";
+	else
+	end
+	count = 0;
+end
+
 function chooseMedal0()
 	local medal0yinyangliaoTab = {medal0yinyangliao_col, medal0yinyangliao_pos, 95, 0, 0, width, height};
   medal0yinyangliaoX, medal0yinyangliaoY = myFindColor(medal0yinyangliaoTab);
 	if medal0yinyangliaoX ~= -1 and medal0yinyangliaoY ~= -1 then
 		medal0yinyangliao();
 	else
-		moveYinyangliao();
-		mSleep(2000);
-		chooseMedal0();
+		poX, poY = myFindColor(poTab);
+		if poX ~= -1 and poY ~= -1 then
+			tupoFinishi();
+		else
+			moveYinyangliao();
+			mSleep(2000);
+			chooseMedal0();
+		end
 	end
 end
 
@@ -33,9 +53,14 @@ function chooseMedal1()
 	elseif medal0yinyangliaoX ~= -1 and medal0yinyangliaoY ~= -1 then
 		medal0yinyangliao();
 	else
-		moveYinyangliao();
-		mSleep(2000);
-		chooseMedal1();
+		poX, poY = myFindColor(poTab);
+		if poX ~= -1 and poY ~= -1 then
+			tupoFinishi();
+		else
+			moveYinyangliao();
+			mSleep(2000);
+			chooseMedal1();
+		end
 	end
 end
 
@@ -53,9 +78,14 @@ function chooseMedal2()
 	elseif medal0yinyangliaoX ~= -1 and medal0yinyangliaoY ~= -1 then
 		medal0yinyangliao();
 	else
-		moveYinyangliao();
-		mSleep(2000);
-		chooseMedal2();
+		poX, poY = myFindColor(poTab);
+		if poX ~= -1 and poY ~= -1 then
+			tupoFinishi();
+		else
+			moveYinyangliao();
+			mSleep(2000);
+			chooseMedal2();
+		end
 	end
 end
 
@@ -77,9 +107,14 @@ function chooseMedal3()
 	elseif medal0yinyangliaoX ~= -1 and medal0yinyangliaoY ~= -1 then
 		medal0yinyangliao();
 	else
-		moveYinyangliao();
-		mSleep(2000);
-		chooseMedal3();
+		poX, poY = myFindColor(poTab);
+		if poX ~= -1 and poY ~= -1 then
+			tupoFinishi();
+		else
+			moveYinyangliao();
+			mSleep(2000);
+			chooseMedal3();
+		end
 	end
 end
 
@@ -105,9 +140,14 @@ function chooseMedal4()
 	elseif medal0yinyangliaoX ~= -1 and medal0yinyangliaoY ~= -1 then
 		medal0yinyangliao();
 	else
-		moveYinyangliao();
-		mSleep(2000);
-		chooseMedal4();
+		poX, poY = myFindColor(poTab);
+		if poX ~= -1 and poY ~= -1 then
+			tupoFinishi();
+		else
+			moveYinyangliao();
+			mSleep(2000);
+			chooseMedal4();
+		end
 	end
 end
 
@@ -137,9 +177,14 @@ function chooseMedal5()
 	elseif medal0yinyangliaoX ~= -1 and medal0yinyangliaoY ~= -1 then
 		medal0yinyangliao();
 	else
-		moveYinyangliao();
-		mSleep(2000);
-		chooseMedal5();
+		poX, poY = myFindColor(poTab);
+		if poX ~= -1 and poY ~= -1 then
+			tupoFinishi();
+		else
+			moveYinyangliao();
+			mSleep(2000);
+			chooseMedal5();
+		end
 	end
 end
 
