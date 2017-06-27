@@ -40,13 +40,13 @@ function ready()
 	readyX = math.random(1136,1291);
 	readyY = math.random(525,624);
 	tap(readyX,readyY);
-	mSleep(500);
+	mSleep(2000);
 	readyX, readyY = myFindColor(readyTab);
 	while readyX ~= -1 and readyY ~= -1 do
 		readyX = math.random(1136,1291);
 		readyY = math.random(525,624);
 		tap(readyX,readyY);
-		mSleep(500);
+		mSleep(2000);
 		readyX, readyY = myFindColor(readyTab);
 	end
 	sysLog("isBattle="..isBattle);
