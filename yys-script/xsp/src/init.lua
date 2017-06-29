@@ -191,8 +191,8 @@ if width==1334 and height==750 then
 	cancelInvite_pos = "-85|-12|0x862748,83|42|0xc33d21,50|23|0xdf6851,-56|24|0xdf6851,-27|10|0x2a2521,25|17|0x3b2b25,-14|7|0xdf6851"
 	inviteJoinTeam_col = "0x31261b"
 	inviteJoinTeam_pos = "7|-40|0xf3e7ab,42|-38|0xddc26d,60|-35|0xa19b93,-20|-33|0xeddfa1,43|15|0xd2b054,30|-24|0x3a291c"
-	challengeBotton_col = "0xf3b25e"  --挑战按钮主颜色
-	challengeBotton_pos = "-61|-20|0x963b2d,60|31|0x973c2e,15|7|0xf3b25e,-22|13|0xf3b25e,-12|6|0x443829,21|8|0x302a23,-26|-6|0x3d3327"  --挑战按钮周边颜色
+	challengeBotton_col = "0xf9af60"  --挑战按钮主颜色
+	challengeBotton_pos = "-24|5|0x38231f,16|4|0xf3b35d,63|-20|0x993d30,-61|-26|0xdb863d,29|15|0x22221f,-19|-7|0xf9af60,-5|14|0x4f3e35"  --挑战按钮周边颜色
 	yuhun_col = "0xf8f3e0" --御魂按钮主颜色
 	yuhun_pos = "32|0|0x2a2016,28|-24|0x2e31ac,26|24|0x2627cb,22|5|0x281f16,9|-2|0xf5f0de,35|22|0x1f26ba" --御魂按钮周边颜色
 	dashe_col = "0x4e5947" --八歧大蛇图标主颜色
