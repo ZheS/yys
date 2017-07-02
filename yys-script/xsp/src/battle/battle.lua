@@ -37,8 +37,8 @@ end
 
 function ready()
 	isBattle = "true";
-	readyX = math.random(1136,1291);
-	readyY = math.random(525,624);
+	readyX = math.random(1147,1202);
+	readyY = math.random(519,636);
 	mSleep(500);
 	tap(readyX,readyY);
 end
