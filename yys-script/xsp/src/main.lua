@@ -56,6 +56,9 @@ elseif mainInput == "2" then
 		lua_exit()--取消则退出
 	end
 	playerAccountInput = setting.playerAccountSelect;
+	round1Input = setting.round1;
+	round2Input = setting.round2;
+	round3Input = setting.round3;
 	yuhun();
 elseif mainInput == "3" then
 	yuling();

@@ -20,6 +20,60 @@
 	            "type" : "RadioGroup",
 	            "orientation" : "vertical",
 							"rect" : "10,10,400,100"
+            },
+						{
+	            "align" : "left",
+	            "color" : "0,0,0",
+	            "size" : "20",
+	            "text" : "第一回合：",
+	            "type" : "Label",
+							"rect" : "10,200,400,100"
+            },
+						{
+	            "id" : "round1",
+							"gravity" : "center",
+	            "list" : "右边,中间,左边,不标记",
+	            "select" : "0",
+	            "size" : "330",
+	            "type" : "RadioGroup",
+	            "orientation" : "horizontal",
+							"rect" : "170,200,600,100"
+            },
+						{
+	            "align" : "left",
+	            "color" : "0,0,0",
+	            "size" : "20",
+	            "text" : "第二回合：",
+	            "type" : "Label",
+							"rect" : "10,300,400,100"
+            },
+						{
+	            "id" : "round2",
+							"gravity" : "center",
+	            "list" : "右边,中间,左边,不标记",
+	            "select" : "0",
+	            "size" : "330",
+	            "type" : "RadioGroup",
+	            "orientation" : "horizontal",
+							"rect" : "170,300,600,100"
+            },
+						{
+	            "align" : "left",
+	            "color" : "0,0,0",
+	            "size" : "20",
+	            "text" : "第三回合：",
+	            "type" : "Label",
+							"rect" : "10,400,400,100"
+            },
+						{
+	            "id" : "round3",
+							"gravity" : "center",
+	            "list" : "右边,中间,左边,不标记",
+	            "select" : "0",
+	            "size" : "330",
+	            "type" : "RadioGroup",
+	            "orientation" : "horizontal",
+							"rect" : "170,400,600,100"
             }
          ]
       }
