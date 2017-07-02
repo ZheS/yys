@@ -65,17 +65,17 @@ function checkRound()
 		mSleep(500);
 		if round3Input == "0" then
 			sysLog("标记右边");
-			for i = 0,math.random(1,2),1 do 
+			for i = 0,math.random(2,3),1 do 
 				right3();
 			end
 		elseif round3Input == "1" then
 			sysLog("标记中间");
-			for i = 0,math.random(1,2),1 do 
+			for i = 0,math.random(2,3),1 do 
 				middle3();
 			end
 		elseif round3Input == "2" then
 			sysLog("标记左边");
-			for i = 0,math.random(1,2),1 do 
+			for i = 0,math.random(2,3),1 do 
 				left3();
 			end
 		else
@@ -90,7 +90,7 @@ function right1()
 	local biaojiX = math.random(943,1002);
 	local biaojiY = math.random(159,255);
 	tap(biaojiX,biaojiY);
-	mSleep(math.random(200,300));
+	mSleep(math.random(200,400));
 	sysLog("点击坐标位置：x="..biaojiX..",y="..biaojiY)
 end
 
@@ -98,7 +98,7 @@ function middle1()
 	local biaojiX = math.random(609,705);
 	local biaojiY = math.random(95,256);
 	tap(biaojiX,biaojiY);
-	mSleep(math.random(200,300));
+	mSleep(math.random(200,400));
 	sysLog("点击坐标位置：x="..biaojiX..",y="..biaojiY)
 end
 
@@ -106,7 +106,7 @@ function left1()
 	local biaojiX = math.random(267,370);
 	local biaojiY = math.random(144,254);
 	tap(biaojiX,biaojiY);
-	mSleep(math.random(200,300));
+	mSleep(math.random(200,400));
 	sysLog("点击坐标位置：x="..biaojiX..",y="..biaojiY)
 end
 
@@ -114,7 +114,7 @@ function right2()
 	local biaojiX = math.random(927,1036);
 	local biaojiY = math.random(116,248);
 	tap(biaojiX,biaojiY);
-	mSleep(math.random(200,300));
+	mSleep(math.random(200,400));
 	sysLog("点击坐标位置：x="..biaojiX..",y="..biaojiY)
 end
 
@@ -122,7 +122,7 @@ function middle2()
 	local biaojiX = math.random(569,697);
 	local biaojiY = math.random(18,152);
 	tap(biaojiX,biaojiY);
-	mSleep(math.random(200,300));
+	mSleep(math.random(200,400));
 	sysLog("点击坐标位置：x="..biaojiX..",y="..biaojiY)
 end
 
@@ -130,7 +130,7 @@ function left2()
 	local biaojiX = math.random(305,389);
 	local biaojiY = math.random(171,275);
 	tap(biaojiX,biaojiY);
-	mSleep(math.random(200,300));
+	mSleep(math.random(200,400));
 	sysLog("点击坐标位置：x="..biaojiX..",y="..biaojiY)
 end
 
@@ -138,7 +138,7 @@ function right3()
 	local biaojiX = math.random(935,1016);
 	local biaojiY = math.random(144,270);
 	tap(biaojiX,biaojiY);
-	mSleep(math.random(200,300));
+	mSleep(math.random(200,400));
 	sysLog("点击坐标位置：x="..biaojiX..",y="..biaojiY)
 end
 
@@ -146,7 +146,7 @@ function middle3()
 	local biaojiX = math.random(547,773);
 	local biaojiY = math.random(120,237);
 	tap(biaojiX,biaojiY);
-	mSleep(math.random(200,300));
+	mSleep(math.random(200,400));
 	sysLog("点击坐标位置：x="..biaojiX..",y="..biaojiY)
 end
 
@@ -154,6 +154,6 @@ function left3()
 	local biaojiX = math.random(308,377);
 	local biaojiY = math.random(133,267);
 	tap(biaojiX,biaojiY);
-	mSleep(math.random(200,300));
+	mSleep(math.random(200,400));
 	sysLog("点击坐标位置：x="..biaojiX..",y="..biaojiY)
 end
