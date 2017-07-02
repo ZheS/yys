@@ -3,16 +3,15 @@ init("0", 1); --以当前应用 Home 键在右边初始化
 require "util"
 require "init"
 require "yuhun/confirmInvite"
+require "yuhun/checkRound"
 
 function yuhun()
 	battle();
 	
 	if isBattle == "true" then
-		sysLog("等待战斗结束");
-		yuhun();
+		sysLog("战斗中，检查是否需要标记");
+		checkRound();
 	end
-	
-	sysLog("战斗结束，继续yuhunStart");
 	
 	local inviteTab = {invite_col, invite_pos, 95, 0, 0, width, height};
   inviteX, inviteY = myFindColor(inviteTab);
