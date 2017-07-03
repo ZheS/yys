@@ -6,15 +6,15 @@ require "init"
 function checkRound()
 	local round1Tab = {round1_col, round1_pos, 95, 0, 0, width, height};
   round1X, round1Y = myFindColor(round1Tab);
-	sysLog("round1X = "..round1X.."; round1Y = "..round1Y);
+	--sysLog("round1X = "..round1X.."; round1Y = "..round1Y);
   --第一回合
 	local round2Tab = {round2_col, round2_pos, 95, 0, 0, width, height};
   round2X, round2Y = myFindColor(round2Tab);
-	sysLog("round2X = "..round2X.."; round2Y = "..round2Y);
+	--sysLog("round2X = "..round2X.."; round2Y = "..round2Y);
   --第二回合
 	local round3Tab = {round3_col, round3_pos, 95, 0, 0, width, height};
   round3X, round3Y = myFindColor(round3Tab);
-	sysLog("round3X = "..round3X.."; round3Y = "..round3Y);
+	--sysLog("round3X = "..round3X.."; round3Y = "..round3Y);
   --第三回合
 	
 	if round1X ~= -1 and round1Y ~= -1 then
