@@ -80,49 +80,49 @@ function yuhun()
 		tansuoY = math.random(tansuoY-28,tansuoY+35);
 		tap(tansuoX,tansuoY);
 		sysLog("看到探索灯笼，点击进入");
-		mSleep(200);
+		mSleep(500);
     yuhun();
 	elseif yuhunX ~= -1 and yuhunY ~= -1 then
 		yuhunX = math.random(179,243);
 		yuhunY = math.random(669,723);
 		tap(yuhunX,yuhunY);
 		sysLog("看到御魂图标，点击进入");
-		mSleep(200);
+		mSleep(500);
     yuhun();
 	elseif dasheX ~= -1 and dasheY ~= -1 then
 		dasheX = math.random(160,638);
 		dasheY = math.random(298,503);
 		tap(dasheX,dasheY);
 		sysLog("看到御魂界面的八岐大蛇图标，点击进入");
-		mSleep(200);
+		mSleep(500);
     yuhun();
 	elseif yuhunzuduiX ~= -1 and yuhunzuduiY ~= -1 then
 		yuhunzuduiX = math.random(616,732);
 		yuhunzuduiY = math.random(496,539);
 		tap(yuhunzuduiX,yuhunzuduiY);
 		sysLog("看到御魂组队界面的八岐大蛇图标，点击“组队”进入");
-		mSleep(200);
+		mSleep(500);
     yuhun();
 	elseif yuhunCreateTeamX ~= -1 and yuhunCreateTeamY ~= -1 then
 		yuhunCreateTeamX = math.random(1008,1171);
 		yuhunCreateTeamY = math.random(633,676);
 		tap(yuhunCreateTeamX,yuhunCreateTeamY);
 		sysLog("看到组队界面的“创建队伍”按钮，点击进入");
-		mSleep(200);
+		mSleep(500);
 		yuhun();
 	elseif yuhunCreateTeamDetailX ~= -1 and yuhunCreateTeamDetailY ~= -1 then
 		yuhunCreateTeamDetailX = math.random(856,971);
 		yuhunCreateTeamDetailY = math.random(594,637);
 		tap(yuhunCreateTeamDetailX,yuhunCreateTeamDetailY);
 		sysLog("点击“创建队伍”按钮后，选择副本、难度、等级");
-		mSleep(200);
+		mSleep(500);
 		yuhun();
 	elseif tilibugouX ~= -1 and tilibugouY ~= -1 then
 		tilibugouX = math.random(957,998);
 		tilibugouY = math.random(183,224);
 		tap(tilibugouX,tilibugouY);
 		sysLog("体力不够");
-		mSleep(200);
+		mSleep(500);
 		if mainInput == "0" then
 			mainInput = "1";
 			sysLog("只打阴阳寮突破");
@@ -136,7 +136,7 @@ function yuhun()
 		windowCloseY = math.random(windowCloseY-23,windowCloseY+23);
 		tap(windowCloseX,windowCloseY);
 		sysLog("没什么可做的，关闭窗口");
-		mSleep(200);
+		mSleep(500);
 		yuhun();
   else
     yuhun();

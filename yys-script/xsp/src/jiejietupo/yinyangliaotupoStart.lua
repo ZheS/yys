@@ -78,21 +78,21 @@ function yinyangliaotupoStart()
 		tansuoY = math.random(tansuoY-28,tansuoY+35);
 		sysLog("看到探索灯笼，点击进入");
     tap(tansuoX,tansuoY);
-		mSleep(200);
+		mSleep(500);
 		yinyangliaotupoStart();
 	elseif jiejietupoX ~= -1 and jiejietupoY ~= -1 then
 		jiejietupoX = math.random(403,468);
 		jiejietupoY = math.random(669,724);
 		sysLog("看到结界突破图标，点击进入");
     tap(jiejietupoX,jiejietupoY);
-		mSleep(200);
+		mSleep(500);
 		yinyangliaotupoStart();
   elseif yinyangliaotupoX ~= -1 and yinyangliaotupoY ~= -1 then
 		yinyangliaotupoX = math.random(1258,1308);
 		yinyangliaotupoY = math.random(306,404);
 		sysLog("点击“阴阳寮突破”按钮进入");
 		tap(yinyangliaotupoX,yinyangliaotupoY);
-		mSleep(200);
+		mSleep(500);
 		yinyangliaotupoStart();
 	elseif attackEnableX ~= -1 and attackEnableY ~= -1 then
 		if attackFlag == 1 then
@@ -133,26 +133,28 @@ function yinyangliaotupoStart()
 		else 
 		end
 		sysLog("检测到在阴阳寮突破界面，无事可做，进入yinyangliaotupo");
+		mSleep(500);
 		yinyangliaotupo();
 	elseif cancelInviteX ~= -1 and cancelInviteY ~= -1 then
     cancelInviteX = math.random(462,624);
 		cancelInviteY = math.random(430,470);
 		tap(cancelInviteX,cancelInviteY);
 		sysLog("取消邀请，进入yinyangliaotupo");
+		mSleep(500);
 		yinyangliaotupo();
 	elseif yuhunCreateTeamDetailX ~= -1 and yuhunCreateTeamDetailY ~= -1 then
 		yuhunCreateTeamDetailX = math.random(1065,1206);
 		yuhunCreateTeamDetailY = math.random(170,605);
 		tap(yuhunCreateTeamDetailX,yuhunCreateTeamDetailY);
 		sysLog("检测到“创建队伍”明细界面，外置位随意点击一下，关闭此界面");
-		mSleep(200);
+		mSleep(500);
 		yinyangliaotupoStart();
 	elseif windowCloseX ~= -1 and windowCloseY ~= -1 then
 		windowCloseX = math.random(windowCloseX-23,windowCloseX+23);
 		windowCloseY = math.random(windowCloseY-23,windowCloseY+23);
 		tap(windowCloseX,windowCloseY);
 		sysLog("没什么可做的，关闭窗口");
-		mSleep(200);
+		mSleep(500);
 		yinyangliaotupoStart();
 	else
 		yinyangliaotupoStart();
