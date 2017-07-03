@@ -18,8 +18,6 @@ function battle()
   --战斗失败
   battleWinDamoX, battleWinDamoY = myFindColor(battleWinDamoTab);
   --战斗结束后的红达摩
-  battleWinGiftX, battleWinGiftY = myFindColor(battleWinGiftTab);
-  --打开红达摩后的奖励
 	
 	if readyX ~= -1 and readyY ~= -1 then
 		ready();
@@ -27,10 +25,6 @@ function battle()
     battleWin();
   elseif battleLoseX ~= -1 and battleLoseY ~= -1 then
     battleLose();
-  elseif battleWinDamoX ~= -1 and battleWinDamoY ~= -1 then
-    battleWinDamo();
-  elseif battleWinGiftX ~= -1 and battleWinGiftY ~= -1 then
-    battleWinGift();
   else
   end
 end
@@ -44,6 +38,24 @@ function ready()
 end
 
 function battleWin()
+	sysLog("进入battleWin");
+	battleWinGiftX, battleWinGiftY = myFindColor(battleWinGiftTab);
+  --打开红达摩后的奖励
+	if battleWinGiftX ~= -1 and battleWinGiftY ~= -1 then
+		sysLog("礼包已打开");
+    battleWinGift();
+	else
+		sysLog("礼包未打开");
+		battleWinX = math.random(1123,1321);
+		battleWinY = math.random(454,737);
+		tap(battleWinX,battleWinY);
+		sysLog("点击坐标：battleWinX="..battleWinX..",battleWinY="..battleWinY);
+		battleWin();
+	end
+end
+
+--[[
+function battleWin()
 	battleWinX = math.random(1123,1321);
 	battleWinY = math.random(454,737);
 	tap(battleWinX,battleWinY);
@@ -56,6 +68,7 @@ function battleWin()
 	end
 	sysLog("isBattle="..isBattle);
 end
+]]
 
 function battleLose()
 	battleLoseX = math.random(1123,1321);
