@@ -9,7 +9,7 @@ function yuhun()
 	battle();
 	
 	if isBattle == "true" then
-		sysLog("战斗中，检查是否需要标记");
+		--sysLog("战斗中，检查是否需要标记");
 		checkRound();
 	end
 	

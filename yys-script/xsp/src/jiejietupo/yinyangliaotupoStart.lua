@@ -45,8 +45,6 @@ function yinyangliaotupoStart()
 		yinyangliaotupoStart();
 	end
 	
-	sysLog("战斗结束，继续yinyangliaotupoStart");
-	
 	local tansuoTab = {tansuo_col, tansuo_pos, 95, 0, 0, width, height};
   tansuoX, tansuoY = myFindColor(tansuoTab);
   --探索灯笼按钮图标
@@ -68,24 +66,33 @@ function yinyangliaotupoStart()
 	local cancelInviteTab = {cancelInvite_col, cancelInvite_pos, 95, 0, 0, width, height};
   cancelInviteX, cancelInviteY = myFindColor(cancelInviteTab);
   --邀请组队界面中的取消图标
+	local yuhunCreateTeamDetailTab = {yuhunCreateTeamDetail_col, yuhunCreateTeamDetail_pos, 95, 0, 0, width, height};
+  yuhunCreateTeamDetailX, yuhunCreateTeamDetailY = myFindColor(yuhunCreateTeamDetailTab);
+  --御魂创建队伍明细界面
+	local windowCloseTab = {windowClose_col, windowClose_pos, 95, 0, 0, width, height};
+  windowCloseX, windowCloseY = myFindColor(windowCloseTab);
+  --深褐色关闭按钮
 	
   if tansuoX ~= -1 and tansuoY ~= -1 then
 		tansuoX = math.random(tansuoX-25,tansuoX+25);
 		tansuoY = math.random(tansuoY-28,tansuoY+35);
 		sysLog("看到探索灯笼，点击进入");
     tap(tansuoX,tansuoY);
+		mSleep(200);
 		yinyangliaotupoStart();
 	elseif jiejietupoX ~= -1 and jiejietupoY ~= -1 then
 		jiejietupoX = math.random(403,468);
 		jiejietupoY = math.random(669,724);
 		sysLog("看到结界突破图标，点击进入");
     tap(jiejietupoX,jiejietupoY);
+		mSleep(200);
 		yinyangliaotupoStart();
   elseif yinyangliaotupoX ~= -1 and yinyangliaotupoY ~= -1 then
 		yinyangliaotupoX = math.random(1258,1308);
 		yinyangliaotupoY = math.random(306,404);
 		sysLog("点击“阴阳寮突破”按钮进入");
 		tap(yinyangliaotupoX,yinyangliaotupoY);
+		mSleep(200);
 		yinyangliaotupoStart();
 	elseif attackEnableX ~= -1 and attackEnableY ~= -1 then
 		if attackFlag == 1 then
@@ -133,6 +140,20 @@ function yinyangliaotupoStart()
 		tap(cancelInviteX,cancelInviteY);
 		sysLog("取消邀请，进入yinyangliaotupo");
 		yinyangliaotupo();
+	elseif yuhunCreateTeamDetailX ~= -1 and yuhunCreateTeamDetailY ~= -1 then
+		yuhunCreateTeamDetailX = math.random(1065,1206);
+		yuhunCreateTeamDetailY = math.random(170,605);
+		tap(yuhunCreateTeamDetailX,yuhunCreateTeamDetailY);
+		sysLog("检测到“创建队伍”明细界面，外置位随意点击一下，关闭此界面");
+		mSleep(200);
+		yinyangliaotupoStart();
+	elseif windowCloseX ~= -1 and windowCloseY ~= -1 then
+		windowCloseX = math.random(windowCloseX-23,windowCloseX+23);
+		windowCloseY = math.random(windowCloseY-23,windowCloseY+23);
+		tap(windowCloseX,windowCloseY);
+		sysLog("没什么可做的，关闭窗口");
+		mSleep(200);
+		yinyangliaotupoStart();
 	else
 		yinyangliaotupoStart();
   end

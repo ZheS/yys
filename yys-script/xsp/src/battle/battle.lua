@@ -50,6 +50,7 @@ function battleWin()
 		battleWinY = math.random(454,737);
 		tap(battleWinX,battleWinY);
 		sysLog("点击坐标：battleWinX="..battleWinX..",battleWinY="..battleWinY);
+		mSleep(200);
 		battleWin();
 	end
 end
