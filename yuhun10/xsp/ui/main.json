@@ -1,0 +1,45 @@
+{
+   "style" : "custom",
+   "config" : "save_阴阳师.dat",
+   "width" : 800,
+   "height" : 800,
+   "bg" : "a.png",
+   "cancelname" : "取消",
+   "okname" : "确认",
+   "views" : [
+      {
+         "type" : "Page",
+         "style" : "custom",
+         "text" : "功能选择",
+         "views" : [
+						{
+	            "id" : "mainSelect",
+	            "list" : "阴阳寮突破+御魂10,结界突破,御魂,御灵",
+	            "select" : "0",
+	            "size" : "330",
+	            "type" : "RadioGroup",
+	            "orientation" : "vertical",
+							"rect" : "10,10,400,300"
+            },
+						{
+	            "align" : "left",
+	            "color" : "0,0,0",
+	            "size" : "20",
+	            "text" : "悬赏封印协作：",
+	            "type" : "Label",
+							"rect" : "10,300,400,100"
+            },
+						{
+	            "id" : "rewardSelect",
+							"gravity" : "center",
+	            "list" : "接受,拒绝,忽略",
+	            "select" : "0",
+	            "size" : "330",
+	            "type" : "RadioGroup",
+	            "orientation" : "horizontal",
+							"rect" : "220,300,400,100"
+            }
+         ]
+      }
+   ]
+}

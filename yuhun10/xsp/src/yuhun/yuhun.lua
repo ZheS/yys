@@ -32,23 +32,24 @@ function yuhun()
 		yuhun();
 	elseif fangzhuYesX ~= -1 and fangzhuYesY ~= -1 then
 		sysLog("有成员进入组队");
-		--[[两人
-		fangzhuYesX = math.random(1005,1168);
-		fangzhuYesY = math.random(604,646);
-		sysLog("2人已满，开始战斗");
-		tap(fangzhuYesX,fangzhuYesY);
-		]]--
-		local inviteJoinTeamTab = {inviteJoinTeam_col, inviteJoinTeam_pos, 95, 1001, 410, 1173, 567};
-		inviteJoinTeamX, inviteJoinTeamY = myFindColor(inviteJoinTeamTab);
-		if inviteJoinTeamX ~= -1 and inviteJoinTeamY ~= -1 then
-			sysLog("3人未满，继续等待（yuhunStart）");
-			yuhun();
-		else
+		if playerAccountInput == "0" then
 			fangzhuYesX = math.random(1005,1168);
 			fangzhuYesY = math.random(604,646);
-			sysLog("3人已满，开始战斗");
+			sysLog("2人已满，开始战斗");
 			tap(fangzhuYesX,fangzhuYesY);
-			mSleep(200);
+		elseif playerAccountInput == "1" then
+			local inviteJoinTeamTab = {inviteJoinTeam_col, inviteJoinTeam_pos, 95, 1001, 410, 1173, 567};
+			inviteJoinTeamX, inviteJoinTeamY = myFindColor(inviteJoinTeamTab);
+			if inviteJoinTeamX ~= -1 and inviteJoinTeamY ~= -1 then
+				sysLog("3人未满，继续等待（yuhunStart）");
+				yuhun();
+			else
+				fangzhuYesX = math.random(1005,1168);
+				fangzhuYesY = math.random(604,646);
+				sysLog("3人已满，开始战斗");
+				tap(fangzhuYesX,fangzhuYesY);
+				mSleep(200);
+			end
 		end
 		yuhun();
 	elseif tilibugouX ~= -1 and tilibugouY ~= -1 then
