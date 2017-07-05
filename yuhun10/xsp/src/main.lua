@@ -7,5 +7,8 @@ if start == 0 then
 	sysLog("取消执行")
 	lua_exit()--取消则退出
 end
+round1Input = setting.round1;
+round2Input = setting.round2;
+round3Input = setting.round3;
 playerAccountInput = setting.playerAccountSelect;
 yuhun();

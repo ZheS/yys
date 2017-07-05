@@ -3,28 +3,28 @@ init("0", 1); --以当前应用 Home 键在右边初始化
 require "util"
 require "init"
 
+local round1Tab = {round1_col, round1_pos, 95, 0, 0, width, height};
+local round2Tab = {round2_col, round2_pos, 95, 0, 0, width, height};
+local round3Tab = {round3_col, round3_pos, 95, 0, 0, width, height};
+local signedTab = {signed_col, signed_pos, 95, 0, 0, width, height};
+
 function checkRound()
-	local round1Tab = {round1_col, round1_pos, 95, 0, 0, width, height};
   round1X, round1Y = myFindColor(round1Tab);
 	--sysLog("round1X = "..round1X.."; round1Y = "..round1Y);
   --第一回合
-	local round2Tab = {round2_col, round2_pos, 95, 0, 0, width, height};
   round2X, round2Y = myFindColor(round2Tab);
 	--sysLog("round2X = "..round2X.."; round2Y = "..round2Y);
   --第二回合
-	local round3Tab = {round3_col, round3_pos, 95, 0, 0, width, height};
   round3X, round3Y = myFindColor(round3Tab);
 	--sysLog("round3X = "..round3X.."; round3Y = "..round3Y);
   --第三回合
 	
 	if round1X ~= -1 and round1Y ~= -1 then
 		sysLog("进入第一回合");
-		mSleep(500);
+		mSleep(200);
 		if round1Input == "0" then
 			sysLog("标记右边");
-			for i = 0,math.random(1,2),1 do 
-				right1();
-			end
+			right();
 		elseif round1Input == "1" then
 			sysLog("标记中间");
 			for i = 0,math.random(1,2),1 do 
@@ -40,12 +40,10 @@ function checkRound()
 		end
 	elseif round2X ~= -1 and round2Y ~= -1 then
 		sysLog("进入第二回合");
-		mSleep(500);
+		mSleep(200);
 		if round2Input == "0" then
 			sysLog("标记右边");
-			for i = 0,math.random(1,2),1 do 
-				right2();
-			end
+			right();
 		elseif round2Input == "1" then
 			sysLog("标记中间");
 			for i = 0,math.random(1,2),1 do 
@@ -62,12 +60,10 @@ function checkRound()
 		end
 	elseif round3X ~= -1 and round3Y ~= -1 then
 		sysLog("进入第三回合");
-		mSleep(500);
+		mSleep(200);
 		if round3Input == "0" then
 			sysLog("标记右边");
-			for i = 0,math.random(2,3),1 do 
-				right3();
-			end
+			right();
 		elseif round3Input == "1" then
 			sysLog("标记中间");
 			for i = 0,math.random(2,3),1 do 
@@ -84,6 +80,23 @@ function checkRound()
 	else
 		yuhun();
 	end
+end
+
+function right()
+	signedX = math.random(943,1002);
+	signedY = math.random(159,248);
+	tap(signedX,signedY);
+	sysLog("点击坐标位置：x="..signedX..",y="..signedY)
+	signedX, signedY = myFindColor(signedTab);
+	while signedX == -1 and signedY == -1 do
+		sysLog("未标记成功")
+		signedX = math.random(943,1002);
+		signedY = math.random(159,248);
+		tap(signedX,signedY);
+		sysLog("点击坐标位置：x="..signedX..",y="..signedY)
+		signedX, signedY = myFindColor(signedTab);
+	end
+	sysLog("已标记成功")
 end
 
 function right1()
