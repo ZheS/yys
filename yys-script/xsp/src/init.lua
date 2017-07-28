@@ -205,8 +205,8 @@ if width==1334 and height==750 then
 	yuhun_pos = "32|0|0x2a2016,28|-24|0x2e31ac,26|24|0x2627cb,22|5|0x281f16,9|-2|0xf5f0de,35|22|0x1f26ba" --御魂按钮周边颜色
 	dashe_col = "0x4e5947" --八歧大蛇图标主颜色
 	dashe_pos = "-202|63|0x666b5c,-35|190|0x5e5365,-233|186|0x85704c,-315|-6|0x500b0b,-230|254|0x6c4c93,31|238|0x6d6863" --八歧大蛇图标周边颜色
-	yuhunzudui_col = "0xc3a6b7" --御魂组队界面主颜色
-	yuhunzudui_pos = "57|-174|0xd1c7ca,-115|-165|0x6a6e60,144|24|0x6f7365,-123|85|0x867172,-210|-159|0x4a0b0c,196|161|0xf3b25e" --御魂组队界面周边颜色
+	yuhunzudui_col = "0x443e4e" --御魂组队界面主颜色
+	yuhunzudui_pos = "-194|-172|0x5f0909,182|-216|0xab3773,148|-17|0x656657,150|95|0xf3b25e,91|88|0x983d2e,7|-108|0x685a56" --御魂组队界面周边颜色
 	yuhunCreateTeam_col = "0xfdd580" --御魂创建队伍界面主颜色
 	yuhunCreateTeam_pos = "-25|10|0x483f2f,25|29|0xffcb7b,24|32|0x2e2a23,46|15|0xffca7b,-7|17|0xf7d27e,10|19|0xfed07d" --御魂创建队伍界面周边颜色
 	yuhunCreateTeamDetail_col = "0x4759da" --御魂创建队伍明细界面主颜色
